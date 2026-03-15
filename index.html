@@ -737,9 +737,9 @@ footer {
       <select id="track" name="Track">
         <option value="">— Select a track —</option>
         <option value="T1 — Characterisation and Processing of Mineral and Industrial Waste">T1 — Characterisation and Processing of Mineral and Industrial Waste</option>
-        <option value="T2 — Environmental Impact, Remediation and Sustainable Management of Mineral Waste">T2 — Environmental Impact, Remediation and Sustainable Management of Mineral Waste</option>
+        <option value="T2 — Environmental Impact, Remediation and Sustainable Management">T2 — Environmental Impact, Remediation and Sustainable Management</option>
         <option value="T3 — Waste Valorisation Technologies and Circular Economy Strategies">T3 — Waste Valorisation Technologies and Circular Economy Strategies</option>
-        <option value="T4 — Policy and Regulation Frameworks for Mineral Waste Management in Industry">T4 — Policy and Regulation Frameworks for Mineral Waste Management in Industry</option>
+        <option value="T4 — Policy, Regulation and Industry Practice in Mineral Waste Management">T4 — Policy, Regulation and Industry Practice in Mineral Waste Management</option>
       </select>
       <div class="errmsg">Please select a track.</div>
     </div>
@@ -944,11 +944,11 @@ function goTo(n){
   window.scrollTo({top:0,behavior:"smooth"});
 }
 
-document.getElementById("form").addEventListener("submit", e=>{
+document.getElementById("form").addEventListener("submit", async e=>{
   e.preventDefault();
   const oral = document.querySelector("input[name='OralInterest']:checked");
 
-  const data = {
+  const payload = {
     "Full Name":      document.getElementById("name").value.trim(),
     "Email":          document.getElementById("email").value.trim(),
     "Country":        document.getElementById("country").value,
@@ -958,44 +958,34 @@ document.getElementById("form").addEventListener("submit", e=>{
     "Abstract Title": document.getElementById("abtitle").value.trim(),
     "Track":          document.getElementById("track").value,
     "Abstract":       ta.value.trim(),
-    "Word Count":     String(countWords(ta.value)),
+    "Word Count":     countWords(ta.value),
     "Oral Interest":  oral ? oral.value : "",
-    "Submitted At":   new Date().toISOString()
+    "Submitted At":   new Date().toLocaleString()
   };
 
   const btn = document.getElementById("btn-submit");
   btn.textContent = "Submitting…";
   btn.disabled = true;
 
-  // Hidden iframe absorbs the redirect — avoids CORS entirely
-  const iframe = document.createElement("iframe");
-  iframe.name = "submit-frame";
-  iframe.style.display = "none";
-  document.body.appendChild(iframe);
+  try {
+    await fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
 
-  // Temporary form posts into the iframe
-  const tempForm = document.createElement("form");
-  tempForm.method = "POST";
-  tempForm.action = SCRIPT_URL;
-  tempForm.target = "submit-frame";
-  tempForm.style.display = "none";
-
-  const inp = document.createElement("input");
-  inp.type  = "hidden";
-  inp.name  = "payload";
-  inp.value = JSON.stringify(data);
-  tempForm.appendChild(inp);
-  document.body.appendChild(tempForm);
-  tempForm.submit();
-
-  // Show success after 2 seconds
-  setTimeout(()=>{
+    // no-cors means we can't read the response — but if fetch didn't throw, it reached Google
     document.getElementById("form").style.display    = "none";
     document.getElementById("page-ok").style.display = "block";
     document.getElementById("prog-bar").style.display = "none";
-    window.scrollTo({top:0,behavior:"smooth"});
-    document.body.removeChild(tempForm);
-  }, 2000);
+    window.scrollTo({top:0, behavior:"smooth"});
+
+  } catch(err) {
+    btn.textContent = "Submit Abstract";
+    btn.disabled = false;
+    alert("Network error — please check your connection and try again.\nOr email mwv.conference2026@knust.edu.gh");
+  }
 });
 </script>
 </body>
