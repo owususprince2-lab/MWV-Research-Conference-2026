@@ -51,10 +51,10 @@ section { display: none; }
 section.active { display: block; }
 
 /* DEADLINE BANNER */
-.deadline-banner { background: var(--choc); border-bottom: 3px solid var(--gold); color: var(--white); text-align: center; padding: 18px 24px; font-size: 15px; font-weight: 600; }
+.deadline-banner { background: var(--choc); border-bottom: 3px solid var(--red); color: var(--white); text-align: center; padding: 18px 24px; font-size: 15px; font-weight: 600; }
 .deadline-inner { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; }
-.deadline-label { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--choc); padding: 6px 18px; border-radius: 30px; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
-.deadline-date { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--gold-lt); }
+.deadline-label { display: inline-flex; align-items: center; gap: 8px; background: var(--red); color: #fff; padding: 6px 18px; border-radius: 30px; font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; }
+.deadline-date { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: #ffe066; text-shadow: 0 0 14px rgba(255,224,50,0.45); }
 .deadline-cta { display: inline-block; background: transparent; border: 1.5px solid var(--gold); color: var(--gold-lt); padding: 6px 20px; border-radius: 6px; font-size: 13px; font-weight: 600; text-decoration: none; transition: background .18s, color .18s; }
 .deadline-cta:hover { background: var(--gold); color: var(--choc); }
 
@@ -224,9 +224,9 @@ section.active { display: block; }
 .date-day { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: var(--white); line-height: 1.1; }
 .date-info h4 { font-size: 14.5px; font-weight: 600; color: var(--choc); }
 .date-info p { font-size: 13px; color: var(--muted); }
-.date-upcoming .date-badge { background: var(--gold); }
-.date-upcoming .date-day { color: var(--choc); }
-.date-upcoming .date-month { color: var(--choc-mid); }
+.date-upcoming .date-badge { background: var(--red); }
+.date-upcoming .date-day { color: var(--white); }
+.date-upcoming .date-month { color: #ffd0cc; }
 .date-conference .date-badge { background: var(--choc); border: 2px solid var(--gold); }
 
 /* REGISTRATION */
@@ -343,13 +343,12 @@ footer { background: var(--choc); color: rgba(255,255,255,.7); padding: 40px 24p
 
   <div class="deadline-banner">
     <div class="deadline-inner">
-      <span class="deadline-label">⏳ Abstract Submission Deadline</span>
-      <span class="deadline-date">25 April 2026</span>
-      
+      <span class="deadline-label">🔔 EXTENDED Deadline</span>
+      <span class="deadline-date">30 April 2026</span>
     </div>
   </div>
 
-  <!-- ─── HERO: background image + dark overlay, minimal clean text ─── -->
+  <!-- ─── HERO ─── -->
   <div class="hero">
     <div class="hero-inner">
       <h1>Mineral Waste Valorization<br><em>Research Conference 2026</em></h1>
@@ -363,9 +362,6 @@ footer { background: var(--choc); color: rgba(255,255,255,.7); padding: 40px 24p
       </div>
     </div>
   </div>
-  <!-- ─── NOTE: save your hero background image as:              ───
-       images/committee/hero-bg.jpg  (same folder as committee photos)
-       The darker the photo the better — or use any KNUST/mining photo. -->
 
   <div class="page-wrap">
     <div class="section-label">About the Conference</div>
@@ -616,12 +612,20 @@ footer { background: var(--choc); color: rgba(255,255,255,.7); padding: 40px 24p
   <div class="page-wrap narrow">
     <div class="section-label">Abstract Submission</div>
     <div class="section-title">Submit Your Abstract</div>
-    <div class="section-sub">Deadline: 25 April 2026 · Notification: 16 May 2026</div>
+    <!-- ★ UPDATED: deadline extended to 30 April -->
+    <div class="section-sub">
+      <span style="background:#a82a1a;color:#fff;padding:2px 10px;border-radius:4px;font-size:12px;font-weight:700;letter-spacing:0.08em;margin-right:8px;">EXTENDED</span>
+      Deadline: <strong style="color:#a82a1a;">30 April 2026</strong> &nbsp;·&nbsp; Notification: 16 May 2026
+    </div>
 
     <div id="abs-guidelines-view">
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:28px;">
         <div style="background:var(--choc);color:var(--white);border-radius:8px;padding:16px;text-align:center;"><div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;line-height:1;">250</div><div style="font-size:11px;color:var(--gold-lt);margin-top:3px;">Word Limit</div></div>
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center;"><div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--choc);line-height:1;">25 Apr</div><div style="font-size:11px;color:var(--muted);margin-top:3px;">Submission Deadline</div></div>
+        <!-- ★ UPDATED: 30 Apr, red to signal extension -->
+        <div style="background:var(--white);border:2px solid var(--red);border-radius:8px;padding:16px;text-align:center;">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--red);line-height:1;">30 Apr</div>
+          <div style="font-size:11px;color:var(--red);font-weight:700;margin-top:3px;">Extended Deadline</div>
+        </div>
         <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center;"><div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--choc);line-height:1;">16 May</div><div style="font-size:11px;color:var(--muted);margin-top:3px;">Notification Date</div></div>
         <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center;"><div style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--choc);line-height:1;">Free</div><div style="font-size:11px;color:var(--muted);margin-top:3px;">No Submission Fee</div></div>
       </div>
@@ -654,7 +658,8 @@ footer { background: var(--choc); color: rgba(255,255,255,.7); padding: 40px 24p
 
       <div style="text-align:center;padding:10px 0 20px;">
         <button onclick="showAbsForm()" style="background:var(--choc);color:var(--white);padding:15px 48px;border:none;border-radius:6px;font-size:15px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;">Submit Your Abstract &rarr;</button>
-        <p style="font-size:12px;color:var(--muted);margin-top:10px;">Deadline: 25 April 2026 &nbsp;&middot;&nbsp; Notification: 16 May 2026</p>
+        <!-- ★ UPDATED: 30 April -->
+        <p style="font-size:12px;color:var(--red);font-weight:600;margin-top:10px;">📢 Extended Deadline: 30 April 2026 &nbsp;·&nbsp; Notification: 16 May 2026</p>
       </div>
     </div>
 
@@ -688,7 +693,7 @@ footer { background: var(--choc); color: rgba(255,255,255,.7); padding: 40px 24p
             <label style="display:block;font-size:13px;font-weight:500;color:var(--choc-mid);margin-bottom:7px;">Country <span style="color:var(--red)">*</span></label>
             <select id="acountry" name="Country" style="width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:6px;font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);background:var(--cream);outline:none;appearance:none;background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2210%22 height=%226%22%3E%3Cpath d=%22M0 0l5 6 5-6z%22 fill=%22%23a07050%22/%3E%3C/svg%3E');background-repeat:no-repeat;background-position:right 13px center;padding-right:36px;cursor:pointer;">
               <option value="">— Select your country —</option>
-              <option>Afghanistan</option><option>Albania</option><option>Algeria</option><option>Angola</option><option>Australia</option><option>Austria</option><option>Belgium</option><option>Botswana</option><option>Brazil</option><option>Burkina Faso</option><option>Cameroon</option><option>Canada</option><option>China</option><option>Congo (DRC)</option><option>Côte d'Ivoire</option><option>Egypt</option><option>Ethiopia</option><option>France</option><option>Germany</option><option>Ghana</option><option>India</option><option>Indonesia</option><option>Italy</option><option>Japan</option><option>Kenya</option><option>Liberia</option><option>Libya</option><option>Madagascar</option><option>Malawi</option><option>Malaysia</option><option>Mali</option><option>Morocco</option><option>Mozambique</option><option>Namibia</option><option>Namibia</option><option>Netherlands</option><option>New Zealand</option><option>Niger</option><option>Nigeria</option><option>Norway</option><option>Rwanda</option><option>Senegal</option><option>Sierra Leone</option><option>South Africa</option><option>South Korea</option><option>Spain</option><option>Sweden</option><option>Switzerland</option><option>Tanzania</option><option>Togo</option><option>Tunisia</option><option>Uganda</option><option>United Kingdom</option><option>United States</option><option>Zambia</option><option>Zimbabwe</option><option>Other</option>
+              <option>Afghanistan</option><option>Albania</option><option>Algeria</option><option>Angola</option><option>Australia</option><option>Austria</option><option>Belgium</option><option>Botswana</option><option>Brazil</option><option>Burkina Faso</option><option>Cameroon</option><option>Canada</option><option>China</option><option>Congo (DRC)</option><option>Côte d'Ivoire</option><option>Egypt</option><option>Ethiopia</option><option>France</option><option>Germany</option><option>Ghana</option><option>India</option><option>Indonesia</option><option>Italy</option><option>Japan</option><option>Kenya</option><option>Liberia</option><option>Libya</option><option>Madagascar</option><option>Malawi</option><option>Malaysia</option><option>Mali</option><option>Morocco</option><option>Mozambique</option><option>Namibia</option><option>Netherlands</option><option>New Zealand</option><option>Niger</option><option>Nigeria</option><option>Norway</option><option>Rwanda</option><option>Senegal</option><option>Sierra Leone</option><option>South Africa</option><option>South Korea</option><option>Spain</option><option>Sweden</option><option>Switzerland</option><option>Tanzania</option><option>Togo</option><option>Tunisia</option><option>Uganda</option><option>United Kingdom</option><option>United States</option><option>Zambia</option><option>Zimbabwe</option><option>Other</option>
             </select>
             <div class="aerr" style="display:none;font-size:11.5px;color:var(--red);margin-top:5px;">Please select your country.</div>
           </div>
@@ -778,7 +783,8 @@ footer { background: var(--choc); color: rgba(255,255,255,.7); padding: 40px 24p
           <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--choc);margin-bottom:5px;">Review and submit</div>
           <p style="font-size:13px;color:var(--muted);margin-bottom:24px;padding-bottom:16px;border-bottom:1px solid var(--tan);">Review carefully before submitting.</p>
           <div id="areview-box" style="background:var(--white);border:1.5px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:20px;"></div>
-          <div class="notice-box"><strong>Deadline: 25 April 2026.</strong><br>Notification: 16 May 2026 · Conference: 25 June 2026, KNUST, Kumasi, Ghana.</div>
+          <!-- ★ UPDATED: 30 April -->
+          <div class="notice-box"><strong style="color:#a82a1a;">📢 Extended Deadline: 30 April 2026.</strong><br>Notification: 16 May 2026 · Conference: 25 June 2026, KNUST, Kumasi, Ghana.</div>
           <p style="font-size:12px;color:var(--muted);margin-bottom:20px;">By submitting you confirm this is original work and consent to peer review.</p>
           <div style="display:flex;gap:12px;">
             <button type="button" style="background:transparent;color:var(--muted);padding:13px 20px;border:1.5px solid var(--border);border-radius:6px;font-size:13px;cursor:pointer;font-family:'Inter',sans-serif;" onclick="aGoTo(3)">← Back</button>
@@ -810,7 +816,17 @@ footer { background: var(--choc); color: rgba(255,255,255,.7); padding: 40px 24p
     <div class="section-title">Key Milestones</div>
     <div class="section-sub">Mark these dates in your calendar</div>
     <div class="dates-list">
-      <div class="date-row date-upcoming"><div class="date-badge"><div class="date-month">Apr</div><div class="date-day">25</div></div><div class="date-info"><h4>Abstract Submission Deadline</h4><p>25 April 2026 — Hard deadline. No extensions.</p></div></div>
+      <!-- ★ UPDATED: 30 April, red badge, EXTENDED label -->
+      <div class="date-row date-upcoming">
+        <div class="date-badge" style="background:var(--red);">
+          <div class="date-month" style="color:#ffd0cc;">Apr</div>
+          <div class="date-day">30</div>
+        </div>
+        <div class="date-info">
+          <h4>Abstract Submission Deadline &nbsp;<span style="background:#a82a1a;color:#fff;font-size:10px;padding:2px 9px;border-radius:10px;vertical-align:middle;font-weight:700;">EXTENDED</span></h4>
+          <p><strong style="color:#a82a1a;">30 April 2026 (Extended)</strong> — Hard deadline.</p>
+        </div>
+      </div>
       <div class="date-row"><div class="date-badge"><div class="date-month">May</div><div class="date-day">16</div></div><div class="date-info"><h4>Notification of Acceptance</h4><p>16 May 2026 — All authors notified by email with reference code</p></div></div>
       <div class="date-row"><div class="date-badge"><div class="date-month">Jun</div><div class="date-day">06</div></div><div class="date-info"><h4>Full Paper Submission</h4><p>6 June 2026 — For papers selected for JUST journal consideration</p></div></div>
       <div class="date-row"><div class="date-badge"><div class="date-month">Jun</div><div class="date-day">20</div></div><div class="date-info"><h4>Finalisation of Accepted Papers</h4><p>20 June 2026 — Final versions and presentations due</p></div></div>
