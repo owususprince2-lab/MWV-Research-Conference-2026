@@ -18,14 +18,14 @@
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);font-size:15px;line-height:1.7}
 
-/* ── NAV ── */
+/* NAV */
 nav{position:sticky;top:0;z-index:1000;background:var(--choc);box-shadow:0 2px 12px rgba(61,31,13,.3)}
 .nav-inner{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:62px}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--white);text-decoration:none;letter-spacing:.02em}
 .nav-logo span{color:var(--gold-lt)}
 .nav-links{display:flex;align-items:center;gap:0;list-style:none}
 .nav-links>li{position:relative}
-.nav-links>li>a{display:block;padding:0 12px;height:62px;line-height:62px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.85);text-decoration:none;white-space:nowrap;transition:background .15s,color .15s;letter-spacing:.01em}
+.nav-links>li>a{display:block;padding:0 11px;height:62px;line-height:62px;font-size:12px;font-weight:500;color:rgba(255,255,255,.85);text-decoration:none;white-space:nowrap;transition:background .15s,color .15s;letter-spacing:.01em}
 .nav-links>li>a:hover,.nav-links>li:hover>a{background:rgba(255,255,255,.08);color:var(--gold-lt)}
 .dropdown{display:none;position:absolute;top:62px;left:0;background:var(--choc-mid);min-width:230px;border-top:2px solid var(--gold);border-radius:0 0 8px 8px;box-shadow:0 8px 24px rgba(0,0,0,.3);list-style:none;z-index:200}
 .nav-links>li:hover .dropdown{display:block}
@@ -36,13 +36,13 @@ nav{position:sticky;top:0;z-index:1000;background:var(--choc);box-shadow:0 2px 1
 .mobile-menu{display:none;background:var(--choc-mid);padding:12px 0}
 .mobile-menu a{display:block;padding:11px 24px;font-size:14px;color:rgba(255,255,255,.85);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.06)}
 .mobile-menu a:hover{background:rgba(255,255,255,.08);color:var(--gold-lt)}
-@media(max-width:900px){.nav-links{display:none}.hamburger{display:block}}
+@media(max-width:960px){.nav-links{display:none}.hamburger{display:block}}
 
-/* ── SECTIONS ── */
+/* SECTIONS */
 section{display:none}
 section.active{display:block}
 
-/* ── HERO SLIDESHOW ── */
+/* HERO SLIDESHOW */
 .hero{position:relative;height:92vh;min-height:580px;max-height:900px;overflow:hidden;background:var(--choc)}
 .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;background-size:cover;background-position:center}
 .hero-slide.active{opacity:1}
@@ -61,7 +61,7 @@ section.active{display:block}
 .hero-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:background .3s,transform .3s}
 .hero-dot.active{background:var(--gold-lt);transform:scale(1.3)}
 
-/* ── COUNTDOWN ── */
+/* COUNTDOWN */
 .countdown-bar{background:var(--choc-mid);border-bottom:2px solid var(--gold);padding:14px 24px;text-align:center}
 .countdown-inner{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
 .countdown-label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-lt)}
@@ -70,30 +70,30 @@ section.active{display:block}
 .countdown-unit .num{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--white);line-height:1}
 .countdown-unit .lbl{font-size:10px;color:var(--gold-lt);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
 
-/* ── SCROLLING SPONSORS BAR ── */
+/* SPONSORS TICKER */
 .sponsors-ticker{background:var(--choc);padding:16px 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.1)}
 .sponsors-track{display:flex;align-items:center;gap:48px;animation:ticker 22s linear infinite;white-space:nowrap}
 .sponsors-track:hover{animation-play-state:paused}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .sponsor-item{display:inline-flex;align-items:center;gap:10px;padding:0 8px}
-.sponsor-item img{height:36px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.75;transition:opacity .2s}
-.sponsor-item img:hover{opacity:1}
-.sponsor-name{font-size:13px;font-weight:600;color:rgba(255,255,255,.7);white-space:nowrap;letter-spacing:.04em}
+.sponsor-item-img{width:44px;height:44px;border-radius:6px;overflow:hidden;background:rgba(255,255,255,.15);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.sponsor-item-img img{width:100%;height:100%;object-fit:contain;display:block}
+.sponsor-name{font-size:13px;font-weight:600;color:rgba(255,255,255,.85);white-space:nowrap;letter-spacing:.04em}
 
-/* ── PAGE WRAPPER ── */
+/* PAGE WRAPPER */
 .page-wrap{max-width:1100px;margin:0 auto;padding:60px 24px}
 .page-wrap.narrow{max-width:780px}
 .section-eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
 .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,40px);font-weight:700;color:var(--choc);margin-bottom:10px;line-height:1.15}
 .section-sub{font-size:14px;color:var(--muted);margin-bottom:40px;padding-bottom:20px;border-bottom:2px solid var(--tan)}
 
-/* ── HOME: 3 Featured People ── */
+/* HOME: 3 Featured People */
 .featured-people{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
 @media(max-width:680px){.featured-people{grid-template-columns:1fr}}
 .featured-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(61,31,13,.07);transition:box-shadow .2s,transform .2s;cursor:pointer}
 .featured-card:hover{box-shadow:0 8px 28px rgba(61,31,13,.15);transform:translateY(-3px)}
 .featured-photo{width:100%;aspect-ratio:1/1;overflow:hidden;background:var(--sand)}
-.featured-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;border-radius:0}
+.featured-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .featured-body{padding:18px 20px 20px}
 .featured-name{font-weight:700;font-size:15px;color:var(--choc);margin-bottom:3px}
 .featured-role{font-size:11.5px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
@@ -101,13 +101,13 @@ section.active{display:block}
 .btn-profile{display:inline-block;background:transparent;border:1.5px solid var(--choc-lt);color:var(--choc-lt);padding:6px 18px;border-radius:5px;font-size:12px;font-weight:600;cursor:pointer;transition:background .15s,color .15s;font-family:'Inter',sans-serif;text-decoration:none}
 .btn-profile:hover{background:var(--choc);color:var(--white);border-color:var(--choc)}
 
-/* ── TRACKS ── */
+/* TRACKS */
 .tracks{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:28px}
 .track-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:20px;border-left:4px solid var(--choc-lt)}
 .track-code{display:inline-block;background:var(--choc);color:var(--white);font-size:11px;font-weight:700;padding:3px 10px;border-radius:4px;margin-bottom:10px;letter-spacing:.04em}
 .track-card h3{font-size:14px;font-weight:600;color:var(--choc);line-height:1.5}
 
-/* ── LOCATION CARD ── */
+/* LOCATION CARD */
 .location-card{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:12px;overflow:hidden;border:1px solid var(--border);margin-top:40px;box-shadow:0 2px 14px rgba(61,31,13,.08)}
 @media(max-width:680px){.location-card{grid-template-columns:1fr}}
 .location-photo{min-height:280px;overflow:hidden;background:var(--sand)}
@@ -116,7 +116,15 @@ section.active{display:block}
 .location-info h3{font-family:'Cormorant Garamond',serif;font-size:26px;color:var(--choc);margin-bottom:14px;font-weight:700}
 .location-info p{font-size:14px;color:#3a2010;line-height:1.75;margin-bottom:12px}
 
-/* ── ABOUT ── */
+/* ABOUT - mini slideshow */
+.about-slideshow{position:relative;width:100%;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:var(--choc)}
+.about-slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;background-size:cover;background-position:center}
+.about-slide.active{opacity:1}
+.about-slide-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10}
+.about-slide-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.4);cursor:pointer;transition:background .3s}
+.about-slide-dot.active{background:var(--gold-lt)}
+
+/* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 @media(max-width:700px){.about-grid{grid-template-columns:1fr}}
 .about-body p{margin-bottom:16px;color:#3a2010;line-height:1.8;font-size:14.5px}
@@ -128,7 +136,7 @@ section.active{display:block}
 .objectives li::before{content:'';position:absolute;left:0;top:18px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
 .objectives li:last-child{border-bottom:none}
 
-/* ── PEOPLE GRID (Committee / Speakers / Chairs) ── */
+/* PEOPLE GRID */
 .people-section{margin-bottom:52px}
 .people-section-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--choc);margin-bottom:6px;padding-bottom:10px;border-bottom:2px solid var(--tan)}
 .people-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px;margin-top:24px}
@@ -143,7 +151,25 @@ section.active{display:block}
 .btn-view-profile{display:inline-block;background:transparent;border:1.5px solid var(--border);color:var(--muted);padding:5px 14px;border-radius:5px;font-size:11.5px;font-weight:600;cursor:pointer;transition:all .15s;font-family:'Inter',sans-serif}
 .btn-view-profile:hover{background:var(--choc);color:var(--white);border-color:var(--choc)}
 
-/* ── SPEAKER CARDS (wider) ── */
+/* SESSION CHAIRS ROOM LAYOUT */
+.room-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:28px}
+@media(max-width:800px){.room-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.room-grid{grid-template-columns:1fr}}
+.room-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(61,31,13,.06)}
+.room-header{background:var(--choc);padding:16px 20px}
+.room-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;color:var(--white);margin-bottom:4px}
+.room-themes{font-size:12px;color:var(--gold-lt);line-height:1.5}
+.room-body{padding:18px 20px}
+.room-role-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;margin-top:14px}
+.room-role-label:first-child{margin-top:0}
+.room-person{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--tan)}
+.room-person:last-child{border-bottom:none}
+.room-avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;background:var(--sand);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;color:var(--choc-lt)}
+.room-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.room-person-name{font-size:12.5px;font-weight:600;color:var(--choc);line-height:1.3}
+.room-person-dept{font-size:11px;color:var(--muted)}
+
+/* SPEAKER CARDS */
 .speaker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:24px;margin-top:28px}
 .speaker-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden;box-shadow:0 2px 10px rgba(61,31,13,.06);cursor:pointer;transition:box-shadow .2s,transform .2s}
 .speaker-card:hover{box-shadow:0 8px 28px rgba(61,31,13,.15);transform:translateY(-3px)}
@@ -154,7 +180,17 @@ section.active{display:block}
 .speaker-title{font-size:12.5px;color:var(--muted);margin-bottom:8px;line-height:1.45}
 .speaker-topic{font-size:12.5px;color:#3a2010;font-style:italic;border-top:1px solid var(--tan);padding-top:10px;line-height:1.5;margin-bottom:12px}
 
-/* ── PROGRAMME ── */
+/* PANEL DISCUSSION */
+.panel-question{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:20px;position:relative}
+.panel-q-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--tan);position:absolute;top:16px;right:20px;line-height:1}
+.panel-q-header{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.panel-sponsor-badge{display:flex;align-items:center;gap:8px;background:var(--sand);border:1px solid var(--border);border-radius:8px;padding:6px 12px 6px 8px;flex-shrink:0}
+.panel-sponsor-badge img{height:32px;width:auto;max-width:60px;object-fit:contain;border-radius:4px}
+.panel-sponsor-badge span{font-size:11px;font-weight:700;color:var(--choc);letter-spacing:.04em;white-space:nowrap}
+.panel-q-title{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--choc);line-height:1.3;flex:1}
+.panel-q-body{font-size:13.5px;color:#3a2010;line-height:1.8}
+
+/* PROGRAMME */
 .programme-layout{display:grid;grid-template-columns:1fr 280px;gap:32px;align-items:start}
 @media(max-width:800px){.programme-layout{grid-template-columns:1fr}}
 .programme-table{width:100%;border-collapse:collapse;margin-top:0}
@@ -175,7 +211,7 @@ tr.prog-highlight td{background:#fdf0e3!important;border-left:3px solid var(--go
 .moderator-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:700;color:var(--choc);margin-bottom:4px}
 .moderator-role{font-size:12px;color:var(--muted);line-height:1.5}
 
-/* ── DATES ── */
+/* DATES */
 .dates-list{margin-top:24px}
 .date-row{display:flex;align-items:center;gap:20px;padding:18px 20px;background:var(--white);border:1px solid var(--border);border-radius:8px;margin-bottom:12px}
 .date-badge{flex-shrink:0;width:68px;text-align:center;background:var(--choc);border-radius:8px;padding:8px 4px}
@@ -188,15 +224,25 @@ tr.prog-highlight td{background:#fdf0e3!important;border-left:3px solid var(--go
 .badge-closed{background:#e8d5c0;color:#7a5c45}
 .badge-upcoming{background:#2e7d52;color:#fff}
 
-/* ── SPONSORS PAGE ── */
-.sponsor-tier{margin-bottom:40px}
-.sponsor-tier h3{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--tan)}
-.sponsor-logos{display:flex;flex-wrap:wrap;gap:20px;align-items:center}
-.sponsor-logo-card{background:var(--white);border:1.5px solid var(--border);border-radius:8px;padding:16px 28px;display:flex;align-items:center;justify-content:center;min-width:140px;min-height:80px}
-.sponsor-logo-card img{max-height:52px;max-width:140px;width:auto;object-fit:contain}
-.sponsor-logo-card.text-only{font-size:14px;font-weight:700;color:var(--choc);text-align:center;line-height:1.4}
+/* SPONSORS PAGE - big logos */
+.sponsors-all-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:24px;margin-top:36px}
+.sponsor-big-card{background:var(--white);border:1.5px solid var(--border);border-radius:12px;padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:140px;box-shadow:0 2px 10px rgba(61,31,13,.06);transition:box-shadow .2s,transform .2s}
+.sponsor-big-card:hover{box-shadow:0 8px 24px rgba(61,31,13,.14);transform:translateY(-2px)}
+.sponsor-big-card img{max-height:80px;max-width:160px;width:auto;object-fit:contain;display:block}
+.sponsor-big-card .sponsor-fallback{font-size:18px;font-weight:700;color:var(--choc);text-align:center;line-height:1.4}
 
-/* ── CONTACT ── */
+/* AWARDS */
+.awards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:36px}
+.award-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:32px;text-align:center;box-shadow:0 2px 12px rgba(61,31,13,.07);position:relative;overflow:hidden}
+.award-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-lt))}
+.award-icon{font-size:48px;margin-bottom:16px;display:block}
+.award-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--choc);margin-bottom:8px}
+.award-desc{font-size:13.5px;color:var(--muted);line-height:1.7}
+.award-criteria{margin-top:16px;background:var(--sand);border-radius:8px;padding:14px;text-align:left}
+.award-criteria li{font-size:12.5px;color:#3a2010;margin-bottom:6px;padding-left:14px;position:relative}
+.award-criteria li::before{content:'✓';position:absolute;left:0;color:var(--gold);font-weight:700}
+
+/* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
 @media(max-width:700px){.contact-grid{grid-template-columns:1fr}}
 .contact-card{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:28px}
@@ -213,11 +259,18 @@ tr.prog-highlight td{background:#fdf0e3!important;border-left:3px solid var(--go
 .btn-submit{background:var(--choc);color:var(--white);padding:13px 36px;border:none;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:background .18s}
 .btn-submit:hover{background:var(--choc-mid)}
 
-/* ── NOTICE ── */
+/* NOTICE */
 .notice-box{background:#fdf0e3;border-left:3px solid var(--choc-lt);border-radius:0 8px 8px 0;padding:14px 18px;font-size:13px;color:var(--choc-mid);line-height:1.65;margin-bottom:24px}
 .notice-box strong{color:var(--choc)}
 
-/* ── MODAL ── */
+/* JUST BANNER */
+.just-banner{background:linear-gradient(135deg,var(--choc) 0%,var(--choc-mid) 100%);border-radius:12px;padding:28px 32px;margin-top:40px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.just-banner-icon{font-size:40px;flex-shrink:0}
+.just-banner-text h3{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--white);margin-bottom:4px}
+.just-banner-text p{font-size:13px;color:rgba(255,255,255,.8);line-height:1.6}
+.just-banner-badge{background:var(--gold);color:var(--choc);font-size:12px;font-weight:800;padding:6px 16px;border-radius:20px;letter-spacing:.04em;flex-shrink:0;white-space:nowrap}
+
+/* MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:9000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .25s}
 .modal-overlay.open{opacity:1;pointer-events:all}
 .modal-box{background:var(--white);border-radius:14px;max-width:680px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.4);transform:translateY(20px);transition:transform .25s}
@@ -238,7 +291,7 @@ tr.prog-highlight td{background:#fdf0e3!important;border-left:3px solid var(--go
 .modal-close{position:sticky;top:0;width:100%;background:var(--choc);color:var(--white);border:none;padding:12px;font-size:13px;font-weight:600;cursor:pointer;border-radius:14px 14px 0 0;display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Inter',sans-serif;z-index:10}
 @media(max-width:560px){.modal-header{grid-template-columns:1fr}.modal-photo{min-height:200px}}
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer{background:var(--choc);color:rgba(255,255,255,.7);padding:40px 24px 24px}
 .footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:32px}
 @media(max-width:700px){.footer-inner{grid-template-columns:1fr;gap:24px}}
@@ -253,7 +306,7 @@ footer{background:var(--choc);color:rgba(255,255,255,.7);padding:40px 24px 24px}
 </head>
 <body>
 
-<!-- ═══ NAV ═══ -->
+<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="#" onclick="showSection('home')">MWV<span>RC 2026</span></a>
@@ -261,21 +314,22 @@ footer{background:var(--choc);color:rgba(255,255,255,.7);padding:40px 24px 24px}
       <li><a href="#" onclick="showSection('home')">Home</a></li>
       <li><a href="#" onclick="showSection('about')">About</a></li>
       <li>
-        <a href="#" onclick="showSection('committee')">Committee ▾</a>
+        <a href="#">Committee ▾</a>
         <ul class="dropdown">
           <li><a href="#" onclick="showSection('committee')">Organising Committee</a></li>
           <li><a href="#" onclick="showSection('chairs')">Session Chairs</a></li>
         </ul>
       </li>
       <li>
-        <a href="#" onclick="showSection('speakers')">Speakers ▾</a>
+        <a href="#">Speakers ▾</a>
         <ul class="dropdown">
           <li><a href="#" onclick="showSection('speakers')">Keynote Speakers</a></li>
-          <li><a href="#" onclick="showSection('speakers')">Panel Discussion</a></li>
+          <li><a href="#" onclick="showSection('panel')">Panel Discussion</a></li>
         </ul>
       </li>
       <li><a href="#" onclick="showSection('programme')">Programme</a></li>
       <li><a href="#" onclick="showSection('dates')">Important Dates</a></li>
+      <li><a href="#" onclick="showSection('awards')">Awards</a></li>
       <li><a href="#" onclick="showSection('sponsors')">Sponsors</a></li>
       <li><a href="#" onclick="showSection('contact')">Contact</a></li>
     </ul>
@@ -288,18 +342,18 @@ footer{background:var(--choc);color:rgba(255,255,255,.7);padding:40px 24px 24px}
     <a href="#" onclick="showSection('about');closeMobile()">About</a>
     <a href="#" onclick="showSection('committee');closeMobile()">Organising Committee</a>
     <a href="#" onclick="showSection('chairs');closeMobile()">Session Chairs</a>
-    <a href="#" onclick="showSection('speakers');closeMobile()">Speakers</a>
+    <a href="#" onclick="showSection('speakers');closeMobile()">Keynote Speakers</a>
+    <a href="#" onclick="showSection('panel');closeMobile()">Panel Discussion</a>
     <a href="#" onclick="showSection('programme');closeMobile()">Programme</a>
     <a href="#" onclick="showSection('dates');closeMobile()">Important Dates</a>
+    <a href="#" onclick="showSection('awards');closeMobile()">Awards</a>
     <a href="#" onclick="showSection('sponsors');closeMobile()">Sponsors</a>
     <a href="#" onclick="showSection('contact');closeMobile()">Contact</a>
   </div>
 </nav>
 
-<!-- ═══ HOME ═══ -->
+<!-- HOME -->
 <section id="sec-home" class="active">
-
-  <!-- HERO SLIDESHOW -->
   <div class="hero" id="hero">
     <div class="hero-slide active" style="background-image:url('images/committee/Conference.jpg')"></div>
     <div class="hero-slide" style="background-image:url('images/committee/seminar10.jpg')"></div>
@@ -343,51 +397,61 @@ footer{background:var(--choc);color:rgba(255,255,255,.7);padding:40px 24px 24px}
 
   <!-- SPONSORS TICKER -->
   <div class="sponsors-ticker">
-    <div class="sponsors-track" id="sponsors-track">
-      <!-- populated by JS -->
-    </div>
+    <div class="sponsors-track" id="sponsors-track"></div>
   </div>
 
   <div class="page-wrap">
     <div class="section-eyebrow">About the Conference</div>
     <div class="section-title">Welcome to MWVRC 2026</div>
     <p style="font-size:14.5px;color:#3a2010;max-width:720px;line-height:1.85;margin-bottom:18px;">The Mineral Waste Valorization Research Conference 2026 (MWVRC 2026) is a one-day hybrid research conference bringing together postgraduate researchers, academic staff, engineers, industry professionals and policymakers to address the challenge of mineral and industrial waste management in Ghana and beyond.</p>
-    <p style="font-size:14.5px;color:#3a2010;max-width:720px;line-height:1.85;margin-bottom:40px;">Organised by the Department of Materials and Metallurgical Engineering at KNUST in partnership with the Organisation for Women in Science for the Developing World (OWSD), this conference is a direct output of the OWSD Early Career Fellowship of Dr. Bennetta Koomson.</p>
+    <p style="font-size:14.5px;color:#3a2010;max-width:720px;line-height:1.85;margin-bottom:18px;">Organised by the Department of Materials and Metallurgical Engineering at KNUST in partnership with the Organisation for Women in Science for the Developing World (OWSD), this conference is a direct output of the OWSD Early Career Fellowship of Dr. Bennetta Koomson.</p>
 
-    <div class="section-eyebrow">Conference Leadership</div>
-    <div class="section-title">Meet Our Key Leaders</div>
-    <div class="featured-people">
-      <div class="featured-card" onclick="openModal('provost')">
-        <div class="featured-photo"><img src="images/committee/Provost.jpg" alt="Prof. Kwabena Biritwum Nyarko" onerror="this.style.display='none'"></div>
-        <div class="featured-body">
-          <div class="featured-name">Prof. Kwabena Biritwum Nyarko</div>
-          <div class="featured-role">Conference Chair</div>
-          <div class="featured-affil">Provost, College of Engineering · KNUST</div>
-          <span class="btn-profile">View Profile</span>
-        </div>
+    <!-- JUST PUBLICATION BANNER -->
+    <div class="just-banner">
+      <div class="just-banner-icon">📖</div>
+      <div class="just-banner-text">
+        <h3>Full Papers to be Published in JUST</h3>
+        <p>Selected full papers from MWVRC 2026 will be considered for publication in the <strong style="color:rgba(255,255,255,.95)">Journal of the University of Science and Technology (JUST)</strong>, a peer-reviewed academic journal.</p>
       </div>
-      <div class="featured-card" onclick="openModal('gikunoo')">
-        <div class="featured-photo"><img src="images/committee/Prof. Emmanuel Gikunoo.jpeg" alt="Prof. Emmanuel Gikunoo" onerror="this.style.display='none'"></div>
-        <div class="featured-body">
-          <div class="featured-name">Prof. Emmanuel Gikunoo</div>
-          <div class="featured-role">Head of Department</div>
-          <div class="featured-affil">Dept. Materials &amp; Metallurgical Engineering · KNUST</div>
-          <span class="btn-profile">View Profile</span>
+      <span class="just-banner-badge">JUST Journal</span>
+    </div>
+
+    <div style="margin-top:64px">
+      <div class="section-eyebrow">Conference Leadership</div>
+      <div class="section-title">Meet Our Key Leaders</div>
+      <div class="featured-people">
+        <div class="featured-card" onclick="openModal('provost')">
+          <div class="featured-photo"><img src="images/committee/Provost.jpg" alt="Prof. Kwabena Biritwum Nyarko" onerror="this.style.display='none'"></div>
+          <div class="featured-body">
+            <div class="featured-name">Prof. Kwabena Biritwum Nyarko</div>
+            <div class="featured-role">Conference Chair</div>
+            <div class="featured-affil">Provost, College of Engineering · KNUST</div>
+            <span class="btn-profile">View Profile</span>
+          </div>
         </div>
-      </div>
-      <div class="featured-card" onclick="openModal('bennetta')">
-        <div class="featured-photo"><img src="images/committee/bennetta-koomson.jpg" alt="Dr. Bennetta Koomson" onerror="this.style.display='none'"></div>
-        <div class="featured-body">
-          <div class="featured-name">Dr. Bennetta Koomson</div>
-          <div class="featured-role">OWSD Fellow 2023 · Conference Organiser</div>
-          <div class="featured-affil">Senior Lecturer, Dept. Materials &amp; Metallurgical Engineering · KNUST</div>
-          <span class="btn-profile">View Profile</span>
+        <div class="featured-card" onclick="openModal('bennetta')">
+          <div class="featured-photo"><img src="images/committee/bennetta-koomson.jpg" alt="Dr. Bennetta Koomson" onerror="this.style.display='none'"></div>
+          <div class="featured-body">
+            <div class="featured-name">Dr. Bennetta Koomson</div>
+            <div class="featured-role">Committee Chair · OWSD Fellow 2023</div>
+            <div class="featured-affil">Senior Lecturer, Dept. Materials &amp; Metallurgical Engineering · KNUST</div>
+            <span class="btn-profile">View Profile</span>
+          </div>
+        </div>
+        <div class="featured-card" onclick="openModal('gikunoo')">
+          <div class="featured-photo"><img src="images/committee/Prof. Emmanuel Gikunoo.jpeg" alt="Prof. Emmanuel Gikunoo" onerror="this.style.display='none'"></div>
+          <div class="featured-body">
+            <div class="featured-name">Prof. Emmanuel Gikunoo</div>
+            <div class="featured-role">Head of Department</div>
+            <div class="featured-affil">Dept. Materials &amp; Metallurgical Engineering · KNUST</div>
+            <span class="btn-profile">View Profile</span>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- LOCATION -->
-    <div style="margin-top:64px;">
+    <div style="margin-top:64px">
       <div class="section-eyebrow">Venue</div>
       <div class="section-title">Conference Location</div>
       <div class="location-card">
@@ -396,38 +460,52 @@ footer{background:var(--choc);color:rgba(255,255,255,.7);padding:40px 24px 24px}
           <h3>Library Mall, KNUST</h3>
           <p><strong style="color:var(--choc)">Kwame Nkrumah University of Science and Technology</strong><br>Kumasi, Ghana</p>
           <p>The conference takes place at the Library Mall — one of KNUST's most prominent and accessible open spaces, located at the heart of campus.</p>
-          <p style="font-size:13px;color:var(--muted);">📅 25 June 2026 &nbsp;·&nbsp; Hybrid (In-person + Online)</p>
+          <p style="font-size:13px;color:var(--muted)">📅 25 June 2026 &nbsp;·&nbsp; Hybrid (In-person + Online)</p>
         </div>
       </div>
     </div>
 
     <!-- TRACKS -->
-    <div style="margin-top:64px;">
+    <div style="margin-top:64px">
       <div class="section-eyebrow">Technical Tracks</div>
       <div class="section-title">Areas of Focus</div>
-      <p style="font-size:14px;color:var(--muted);max-width:720px;margin-bottom:0;">The conference spans four technical tracks. Any work related to mineral waste management, valorization, environmental impact or policy is welcome.</p>
+      <p style="font-size:14px;color:var(--muted);max-width:720px;margin-bottom:0;">The conference spans four technical themes presented across three breakout rooms.</p>
       <div class="tracks">
         <div class="track-card"><span class="track-code">T1 · Room A</span><h3>Characterisation and Processing of Mineral and Industrial Waste</h3></div>
         <div class="track-card"><span class="track-code">T2 · Room B</span><h3>Environmental Impact, Remediation and Sustainable Management</h3></div>
         <div class="track-card"><span class="track-code">T3 · Room C</span><h3>Waste Valorisation Technologies and Circular Economy Strategies</h3></div>
-        <div class="track-card"><span class="track-code">T4 · Room A</span><h3>Policy, Regulation and Industry Practice in Mineral Waste Management</h3></div>
+        <div class="track-card"><span class="track-code">T4 · Room A</span><h3>Policy and Regulatory Frameworks for Mineral Waste Management in Industry</h3></div>
       </div>
     </div>
   </div>
 
-  <!-- SPONSORS TICKER (bottom) -->
   <div class="sponsors-ticker" style="margin-top:0">
     <div class="sponsors-track" id="sponsors-track-2"></div>
   </div>
 </section>
 
-<!-- ═══ ABOUT ═══ -->
+<!-- ABOUT -->
 <section id="sec-about">
   <div class="page-wrap">
     <div class="section-eyebrow">About</div>
     <div class="section-title">Conference Overview</div>
     <div class="section-sub">Background, theme, objectives and host institution</div>
-    <div class="about-grid">
+
+    <!-- MINI SLIDESHOW -->
+    <div class="about-slideshow" id="about-slideshow">
+      <div class="about-slide active" style="background-image:url('images/committee/Conference.jpg')"></div>
+      <div class="about-slide" style="background-image:url('images/committee/seminar10.jpg')"></div>
+      <div class="about-slide" style="background-image:url('images/committee/presenting.jpg')"></div>
+      <div class="about-slide" style="background-image:url('images/committee/Bennetta1.jpg')"></div>
+      <div class="about-slide" style="background-image:url('images/committee/discussion.jpg')"></div>
+      <div class="about-slide" style="background-image:url('images/committee/talk.jpg')"></div>
+      <div class="about-slide" style="background-image:url('images/committee/Seminar2.jpg')"></div>
+      <div class="about-slide" style="background-image:url('images/committee/Seminar4.jpg')"></div>
+      <div class="about-slide" style="background-image:url('images/committee/international.jpg')"></div>
+      <div class="about-slide-dots" id="about-dots"></div>
+    </div>
+
+    <div class="about-grid" style="margin-top:40px">
       <div class="about-body">
         <p>The Mineral Waste Valorization Research Conference 2026 (MWVRC 2026) is organised by the Department of Materials and Metallurgical Engineering at KNUST, Kumasi, Ghana, in partnership with the Organisation for Women in Science for the Developing World (OWSD).</p>
         <p><strong style="color:var(--choc)">What is mineral waste?</strong> Mineral waste refers to solid, liquid or semi-solid residues generated during the extraction, processing and beneficiation of mineral resources — including mine tailings, slag, waste rock, process effluents and by-products from metallurgical operations.</p>
@@ -459,29 +537,28 @@ footer{background:var(--choc);color:rgba(255,255,255,.7);padding:40px 24px 24px}
           <p>All sessions — keynotes, breakout rooms, panel discussion and closing ceremony — will be live-streamed. The link will be distributed to all registered online participants.</p>
           <p style="margin-top:10px"><strong>Physical venue:</strong> Library Mall, KNUST, Kumasi, Ghana<br><strong>Online:</strong> Link distributed on registration</p>
         </div>
+        <div class="about-box">
+          <h3>📖 Publication in JUST</h3>
+          <p>Selected full papers will be considered for publication in the <strong style="color:var(--choc)">Journal of the University of Science and Technology (JUST)</strong>, a peer-reviewed academic journal.</p>
+        </div>
       </div>
     </div>
   </div>
   <div class="sponsors-ticker"><div class="sponsors-track" id="sponsors-track-about"></div></div>
 </section>
 
-<!-- ═══ COMMITTEE ═══ -->
+<!-- COMMITTEE -->
 <section id="sec-committee">
   <div class="page-wrap">
     <div class="section-eyebrow">Committee</div>
     <div class="section-title">Organising Committee</div>
     <div class="section-sub">The team behind MWVRC 2026</div>
-
     <div class="people-section">
       <div class="people-section-title">Core Organising Committee</div>
       <div class="people-grid">
         <div class="person-card" onclick="openModal('bennetta')">
           <div class="person-photo"><img src="images/committee/bennetta-koomson.jpg" alt="Dr. Bennetta Koomson" onerror="this.style.display='none';this.parentNode.innerHTML='BK'"></div>
-          <div class="person-body"><div class="person-name">Dr. Bennetta Koomson</div><div class="person-role">Conference Organiser</div><div class="person-affil">OWSD Fellow 2023 · KNUST</div><span class="btn-view-profile">View Profile</span></div>
-        </div>
-        <div class="person-card" onclick="openModal('provost')">
-          <div class="person-photo"><img src="images/committee/Provost.jpg" alt="Prof. Kwabena Biritwum Nyarko" onerror="this.style.display='none';this.parentNode.innerHTML='KN'"></div>
-          <div class="person-body"><div class="person-name">Prof. Kwabena Biritwum Nyarko</div><div class="person-role">Conference Chair</div><div class="person-affil">Provost, College of Engineering · KNUST</div><span class="btn-view-profile">View Profile</span></div>
+          <div class="person-body"><div class="person-name">Dr. Bennetta Koomson</div><div class="person-role">Committee Chair · OWSD Fellow 2023</div><div class="person-affil">Senior Lecturer · KNUST</div><span class="btn-view-profile">View Profile</span></div>
         </div>
         <div class="person-card" onclick="openModal('gikunoo')">
           <div class="person-photo"><img src="images/committee/Prof. Emmanuel Gikunoo.jpeg" alt="Prof. Emmanuel Gikunoo" onerror="this.style.display='none';this.parentNode.innerHTML='EG'"></div>
@@ -509,43 +586,107 @@ footer{background:var(--choc);color:rgba(255,255,255,.7);padding:40px 24px 24px}
   <div class="sponsors-ticker"><div class="sponsors-track" id="sponsors-track-comm"></div></div>
 </section>
 
-<!-- ═══ SESSION CHAIRS ═══ -->
+<!-- SESSION CHAIRS -->
 <section id="sec-chairs">
   <div class="page-wrap">
     <div class="section-eyebrow">Technical Programme</div>
     <div class="section-title">Technical Session Chairs</div>
-    <div class="section-sub">Experts chairing the four technical breakout sessions</div>
-    <div class="people-grid" style="grid-template-columns:repeat(auto-fill,minmax(210px,1fr))">
-      <div class="person-card" onclick="openModal('efiba')">
-        <div class="person-photo"><img src="images/committee/Dr. Efiba Vidda.jpeg" alt="Dr. Efiba Vidda Senkyire Kwarteng" onerror="this.style.display='none';this.parentNode.innerHTML='EV'"></div>
-        <div class="person-body"><div class="person-name">Dr. Efiba Vidda Senkyire Kwarteng</div><div class="person-role">Session Chair · Track 1</div><div class="person-affil">Dept. Geomatic Engineering · KNUST</div><span class="btn-view-profile">View Profile</span></div>
+    <div class="section-sub">Experts leading the three breakout rooms — Chairs and Rapporteurs</div>
+
+    <div class="room-grid">
+      <!-- ROOM A -->
+      <div class="room-card">
+        <div class="room-header">
+          <div class="room-title">Room A</div>
+          <div class="room-themes">T1: Characterization &amp; Processing of Mineral and Industrial Waste<br>T4: Policy &amp; Regulatory Frameworks for Mineral Waste Management in Industry</div>
+        </div>
+        <div class="room-body">
+          <div class="room-role-label">Technical Chairs</div>
+          <div class="room-person" onclick="openModal('efiba')" style="cursor:pointer">
+            <div class="room-avatar"><img src="images/committee/Dr. Efiba Vidda.jpeg" alt="" onerror="this.parentNode.innerHTML='EV'"></div>
+            <div><div class="room-person-name">Dr. Efiba Vidda Senkyire Kwarteng</div><div class="room-person-dept">Geomatic Engineering · KNUST</div></div>
+          </div>
+          <div class="room-person" onclick="openModal('arthur')" style="cursor:pointer">
+            <div class="room-avatar"><img src="images/committee/Dr. Emmanuel Arthur.jpeg" alt="" onerror="this.parentNode.innerHTML='EA'"></div>
+            <div><div class="room-person-name">Dr. Emmanuel Kwesi Arthur</div><div class="room-person-dept">Materials &amp; Metallurgical Eng. · KNUST</div></div>
+          </div>
+        </div>
       </div>
-      <div class="person-card" onclick="openModal('arthur')">
-        <div class="person-photo"><img src="images/committee/Dr. Emmanuel Arthur.jpeg" alt="Dr. Emmanuel Kwesi Arthur" onerror="this.style.display='none';this.parentNode.innerHTML='EA'"></div>
-        <div class="person-body"><div class="person-name">Dr. Emmanuel Kwesi Arthur</div><div class="person-role">Session Chair · Track 2</div><div class="person-affil">Dept. Materials &amp; Metallurgical Engineering · KNUST</div><span class="btn-view-profile">View Profile</span></div>
+
+      <!-- ROOM B -->
+      <div class="room-card">
+        <div class="room-header">
+          <div class="room-title">Room B</div>
+          <div class="room-themes">T2: Environmental Impact, Remediation &amp; Sustainable Management of Mineral Waste</div>
+        </div>
+        <div class="room-body">
+          <div class="room-role-label">Technical Chairs</div>
+          <div class="room-person" onclick="openModal('miriam')" style="cursor:pointer">
+            <div class="room-avatar"><img src="images/committee/Dr. Miriam Brempong.jpeg" alt="" onerror="this.parentNode.innerHTML='MA'"></div>
+            <div><div class="room-person-name">Dr. Miriam Appiah-Brempong</div><div class="room-person-dept">Civil Engineering · KNUST</div></div>
+          </div>
+          <div class="room-person" onclick="openModal('henry')" style="cursor:pointer">
+            <div class="room-avatar"><img src="images/committee/Dr. Henry Agbe.jpeg" alt="" onerror="this.parentNode.innerHTML='HA'"></div>
+            <div><div class="room-person-name">Dr. Henry Agbe</div><div class="room-person-dept">Materials &amp; Metallurgical Eng. · KNUST</div></div>
+          </div>
+        </div>
       </div>
-      <div class="person-card" onclick="openModal('miriam')">
-        <div class="person-photo"><img src="images/committee/Dr. Miriam Brempong.jpeg" alt="Dr. Miriam Appiah Brempong" onerror="this.style.display='none';this.parentNode.innerHTML='MA'"></div>
-        <div class="person-body"><div class="person-name">Dr. Miriam Appiah Brempong</div><div class="person-role">Session Chair · Track 3</div><div class="person-affil">Dept. Civil Engineering · KNUST</div><span class="btn-view-profile">View Profile</span></div>
+
+      <!-- ROOM C -->
+      <div class="room-card">
+        <div class="room-header">
+          <div class="room-title">Room C</div>
+          <div class="room-themes">T3: Waste Valorization Technologies &amp; Circular Economy Strategies</div>
+        </div>
+        <div class="room-body">
+          <div class="room-role-label">Technical Chairs</div>
+          <div class="room-person" onclick="openModal('mizpah')" style="cursor:pointer">
+            <div class="room-avatar"><img src="images/committee/Dr. Mrs. Mizpah Ama Dziedzorm.jpeg" alt="" onerror="this.parentNode.innerHTML='MR'"></div>
+            <div><div class="room-person-name">Dr. Mizpah Ama Dziedzorm Rockson</div><div class="room-person-dept">Chemical Engineering · KNUST</div></div>
+          </div>
+          <div class="room-person" onclick="openModal('emmanuela')" style="cursor:pointer">
+            <div class="room-avatar"><img src="images/committee/Dr. Emmanuela Kwao Boateng.jpeg" alt="" onerror="this.parentNode.innerHTML='EK'"></div>
+            <div><div class="room-person-name">Dr. Emmanuela Kwao-Boateng</div><div class="room-person-dept">Chemical Engineering · KNUST</div></div>
+          </div>
+        </div>
       </div>
-      <div class="person-card" onclick="openModal('henry')">
-        <div class="person-photo"><img src="images/committee/Dr. Henry Agbe.jpeg" alt="Dr. Henry Agbe" onerror="this.style.display='none';this.parentNode.innerHTML='HA'"></div>
-        <div class="person-body"><div class="person-name">Dr. Henry Agbe</div><div class="person-role">Session Chair · Track 4</div><div class="person-affil">Dept. Materials &amp; Metallurgical Engineering · KNUST</div><span class="btn-view-profile">View Profile</span></div>
-      </div>
-      <div class="person-card" onclick="openModal('mizpah')">
-        <div class="person-photo"><img src="images/committee/Dr. Mrs. Mizpah Ama Dziedzorm.jpeg" alt="Dr. Mizpah Ama Dziedzorm Rockson" onerror="this.style.display='none';this.parentNode.innerHTML='MR'"></div>
-        <div class="person-body"><div class="person-name">Dr. Mizpah Ama Dziedzorm Rockson</div><div class="person-role">Session Chair</div><div class="person-affil">Dept. Chemical Engineering · KNUST</div><span class="btn-view-profile">View Profile</span></div>
-      </div>
-      <div class="person-card" onclick="openModal('emmanuela')">
-        <div class="person-photo"><img src="images/committee/Dr. Emmanuela Kwao Boateng.jpeg" alt="Dr. Emmanuela Kwao-Boateng" onerror="this.style.display='none';this.parentNode.innerHTML='EK'"></div>
-        <div class="person-body"><div class="person-name">Dr. Emmanuela Kwao-Boateng</div><div class="person-role">Session Chair</div><div class="person-affil">Dept. Chemical Engineering · KNUST</div><span class="btn-view-profile">View Profile</span></div>
+    </div>
+
+    <!-- Full profile cards below -->
+    <div style="margin-top:52px">
+      <div class="section-eyebrow">Full Profiles</div>
+      <div class="people-grid" style="grid-template-columns:repeat(auto-fill,minmax(200px,1fr))">
+        <div class="person-card" onclick="openModal('efiba')">
+          <div class="person-photo"><img src="images/committee/Dr. Efiba Vidda.jpeg" alt="Dr. Efiba Vidda Senkyire Kwarteng" onerror="this.style.display='none';this.parentNode.innerHTML='EV'"></div>
+          <div class="person-body"><div class="person-name">Dr. Efiba Vidda Senkyire Kwarteng</div><div class="person-role">Session Chair · Track 1</div><div class="person-affil">Geomatic Engineering · KNUST</div><span class="btn-view-profile">View Profile</span></div>
+        </div>
+        <div class="person-card" onclick="openModal('arthur')">
+          <div class="person-photo"><img src="images/committee/Dr. Emmanuel Arthur.jpeg" alt="Dr. Emmanuel Kwesi Arthur" onerror="this.style.display='none';this.parentNode.innerHTML='EA'"></div>
+          <div class="person-body"><div class="person-name">Dr. Emmanuel Kwesi Arthur</div><div class="person-role">Session Chair · Track 1</div><div class="person-affil">Materials &amp; Metallurgical Eng. · KNUST</div><span class="btn-view-profile">View Profile</span></div>
+        </div>
+        <div class="person-card" onclick="openModal('miriam')">
+          <div class="person-photo"><img src="images/committee/Dr. Miriam Brempong.jpeg" alt="Dr. Miriam Appiah Brempong" onerror="this.style.display='none';this.parentNode.innerHTML='MA'"></div>
+          <div class="person-body"><div class="person-name">Dr. Miriam Appiah Brempong</div><div class="person-role">Session Chair · Track 2</div><div class="person-affil">Civil Engineering · KNUST</div><span class="btn-view-profile">View Profile</span></div>
+        </div>
+        <div class="person-card" onclick="openModal('henry')">
+          <div class="person-photo"><img src="images/committee/Dr. Henry Agbe.jpeg" alt="Dr. Henry Agbe" onerror="this.style.display='none';this.parentNode.innerHTML='HA'"></div>
+          <div class="person-body"><div class="person-name">Dr. Henry Agbe</div><div class="person-role">Session Chair · Track 2</div><div class="person-affil">Materials &amp; Metallurgical Eng. · KNUST</div><span class="btn-view-profile">View Profile</span></div>
+        </div>
+        <div class="person-card" onclick="openModal('mizpah')">
+          <div class="person-photo"><img src="images/committee/Dr. Mrs. Mizpah Ama Dziedzorm.jpeg" alt="Dr. Mizpah Ama Dziedzorm Rockson" onerror="this.style.display='none';this.parentNode.innerHTML='MR'"></div>
+          <div class="person-body"><div class="person-name">Dr. Mizpah Ama Dziedzorm Rockson</div><div class="person-role">Session Chair · Track 3</div><div class="person-affil">Chemical Engineering · KNUST</div><span class="btn-view-profile">View Profile</span></div>
+        </div>
+        <div class="person-card" onclick="openModal('emmanuela')">
+          <div class="person-photo"><img src="images/committee/Dr. Emmanuela Kwao Boateng.jpeg" alt="Dr. Emmanuela Kwao-Boateng" onerror="this.style.display='none';this.parentNode.innerHTML='EK'"></div>
+          <div class="person-body"><div class="person-name">Dr. Emmanuela Kwao-Boateng</div><div class="person-role">Session Chair · Track 3</div><div class="person-affil">Chemical Engineering · KNUST</div><span class="btn-view-profile">View Profile</span></div>
+        </div>
       </div>
     </div>
   </div>
   <div class="sponsors-ticker"><div class="sponsors-track" id="sponsors-track-chairs"></div></div>
 </section>
 
-<!-- ═══ SPEAKERS ═══ -->
+<!-- SPEAKERS (Keynotes only) -->
 <section id="sec-speakers">
   <div class="page-wrap">
     <div class="section-eyebrow">Speakers</div>
@@ -580,26 +721,91 @@ footer{background:var(--choc);color:rgba(255,255,255,.7);padding:40px 24px 24px}
         </div>
       </div>
     </div>
-
-    <div style="margin-top:60px">
-      <div class="section-eyebrow">Industry Panel</div>
-      <div class="section-title">Panel Discussion</div>
-      <div class="section-sub">Following the morning keynotes · Moderated by Prof. Kwadwo Mensah Darkwa</div>
-      <div class="about-box" style="max-width:680px">
-        <h3>Panellists</h3>
-        <p style="margin-bottom:12px">The panel brings together representatives from across the mineral waste ecosystem:</p>
-        <ul style="list-style:none;padding:0">
-          <li style="padding:8px 0 8px 20px;border-bottom:1px solid var(--tan);font-size:13.5px;color:#3a2010;position:relative"><span style="position:absolute;left:0;top:14px;width:8px;height:8px;border-radius:50%;background:var(--gold);display:block"></span>SGS — Intertek · ALS · EPA · MPPE</li>
-        </ul>
-        <p style="margin-top:12px;font-style:italic;font-size:13.5px;color:#3a2010">Theme: <strong>Valorizing Mineral Waste through Engineering Innovations and Policy Advocacy</strong></p>
-        <p style="margin-top:12px;font-size:13px;color:var(--muted)">Moderated by <strong style="color:var(--choc)">Prof. Kwadwo Mensah Darkwa</strong></p>
-      </div>
-    </div>
   </div>
   <div class="sponsors-ticker"><div class="sponsors-track" id="sponsors-track-spk"></div></div>
 </section>
 
-<!-- ═══ PROGRAMME ═══ -->
+<!-- PANEL DISCUSSION -->
+<section id="sec-panel">
+  <div class="page-wrap">
+    <div class="section-eyebrow">Industry Panel</div>
+    <div class="section-title">Panel Discussion</div>
+    <div class="section-sub">25 June 2026 · KNUST, Kumasi, Ghana · Moderated by Prof. Kwadwo Mensah Darkwa</div>
+
+    <div style="background:var(--choc);border-radius:12px;padding:20px 28px;margin-bottom:40px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;color:var(--gold-lt);flex:1">"Valorizing Mineral Waste through Engineering and Policy Innovation"</div>
+      <div style="font-size:12px;color:rgba(255,255,255,.7)">Moderated by <strong style="color:var(--white)">Prof. Kwadwo Mensah Darkwa</strong></div>
+    </div>
+
+    <!-- Q1 -->
+    <div class="panel-question">
+      <div class="panel-q-num">01</div>
+      <div class="panel-q-header">
+        <div class="panel-sponsor-badge">
+          <img src="images/committee/Intertek Logo.jpeg" alt="SGS" onerror="this.style.display='none'">
+          <span>SGS</span>
+        </div>
+        <div class="panel-q-title">Bridging Research, Industry, and Impact</div>
+      </div>
+      <div class="panel-q-body">Ghanaian universities and research institutions have generated significant knowledge on mine tailings, waste rock, slags, and metallurgical by-products, yet few of these innovations have reached commercial implementation. What are the key barriers preventing the transition from research to industry adoption, and how can stakeholders work together to convert mineral waste research into scalable economic and environmental solutions?</div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="panel-question">
+      <div class="panel-q-num">02</div>
+      <div class="panel-q-header">
+        <div class="panel-sponsor-badge">
+          <img src="images/committee/ICMS_Imperial college mine safety logo.jpeg" alt="ALS" onerror="this.style.display='none'">
+          <span>ALS</span>
+        </div>
+        <div class="panel-q-title">Characterization as the Foundation of Valorization</div>
+      </div>
+      <div class="panel-q-body">Many mineral waste streams remain underutilized because their resource potential is not fully understood. Given the expertise of laboratories, industry, and academia, how can Ghana strengthen mineral waste characterization and data-driven decision-making to unlock value from mine tailings, waste rock, and processing residues?</div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="panel-question">
+      <div class="panel-q-num">03</div>
+      <div class="panel-q-header">
+        <div class="panel-sponsor-badge">
+          <img src="images/committee/MPPE.jpg" alt="EPA" onerror="this.style.display='none'">
+          <span>EPA</span>
+        </div>
+        <div class="panel-q-title">Policy and Regulatory Transformation</div>
+      </div>
+      <div class="panel-q-body">Current regulations often focus on waste containment and environmental compliance rather than resource recovery. What policy, regulatory, and institutional reforms are needed to incentivize mineral waste valorization, discourage environmentally harmful disposal practices, and promote a circular economy within Ghana's mining sector?</div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="panel-question">
+      <div class="panel-q-num">04</div>
+      <div class="panel-q-header">
+        <div class="panel-sponsor-badge">
+          <img src="images/committee/Intertek Logo.jpeg" alt="Intertek" onerror="this.style.display='none'">
+          <span>Intertek</span>
+        </div>
+        <div class="panel-q-title">Financing and Commercialization of Innovation</div>
+      </div>
+      <div class="panel-q-body">Many promising mineral waste valorization technologies fail to progress beyond pilot studies due to funding and investment challenges. What financing models, public-private partnerships, and investment mechanisms are required to accelerate the commercialization of mineral waste valorization technologies in Ghana and across Africa?</div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="panel-question">
+      <div class="panel-q-num">05</div>
+      <div class="panel-q-header">
+        <div class="panel-sponsor-badge">
+          <img src="images/committee/ICMS_Imperial college mine safety logo.jpeg" alt="ICMS" onerror="this.style.display='none'">
+          <span>ICMS</span>
+        </div>
+        <div class="panel-q-title">Building Ghana's Vision for Mineral Waste Valorization</div>
+      </div>
+      <div class="panel-q-body">Looking ahead to 2035, what would success look like for Ghana in transforming mineral waste from an environmental liability into a strategic resource, and what single action should government, industry, academia, and regulators prioritize today to achieve that vision?</div>
+    </div>
+  </div>
+  <div class="sponsors-ticker"><div class="sponsors-track" id="sponsors-track-panel"></div></div>
+</section>
+
+<!-- PROGRAMME -->
 <section id="sec-programme">
   <div class="page-wrap">
     <div class="section-eyebrow">Programme</div>
@@ -623,8 +829,8 @@ footer{background:var(--choc);color:rgba(255,255,255,.7);padding:40px 24px 24px}
             <tr class="prog-break"><td class="prog-time">11:20 am</td><td><div class="prog-session">Morning Refreshments + Poster Viewing &amp; Exhibition</div></td></tr>
             <tr class="prog-highlight"><td class="prog-time">12:05 pm</td><td><div class="prog-session">Panel Discussion</div><div class="prog-detail">Panelists: SGS · Intertek · ALS · EPA · MPPE</div><div class="prog-detail" style="margin-top:4px;font-style:italic;color:var(--choc-lt)">Theme: Valorizing Mineral Waste through Engineering Innovations and Policy Advocacy</div></td></tr>
             <tr><td class="prog-time">1:00 pm</td><td><div class="prog-session">Technical Breakout Sessions</div>
-              <div class="prog-detail" style="margin-top:6px"><strong>Room A</strong> — T1: Characterization &amp; Processing of Mineral and Industrial Waste &amp; T4: Policy &amp; Regulatory Frameworks for Mineral Waste Management</div>
-              <div class="prog-detail"><strong>Room B</strong> — T2: Environmental Impact, Remediation &amp; Sustainable Management of Mineral Waste</div>
+              <div class="prog-detail" style="margin-top:6px"><strong>Room A</strong> — T1: Characterization &amp; Processing · T4: Policy &amp; Regulatory Frameworks</div>
+              <div class="prog-detail"><strong>Room B</strong> — T2: Environmental Impact, Remediation &amp; Sustainable Management</div>
               <div class="prog-detail"><strong>Room C</strong> — T3: Waste Valorization Technologies &amp; Circular Economy Strategies</div></td></tr>
             <tr class="prog-highlight"><td class="prog-time">3:00 pm</td><td><div class="prog-session">Closing Ceremony &amp; Awards</div>
               <div class="prog-detail">Messages from Sponsors &amp; Organizations · Intertek · MPPE · WISTEM · WiM · TBEC · ALS · ICMS · GhIE · LiMAP-GH · SGS · OWSD GH · EPA · WINE</div>
@@ -655,7 +861,7 @@ footer{background:var(--choc);color:rgba(255,255,255,.7);padding:40px 24px 24px}
   <div class="sponsors-ticker"><div class="sponsors-track" id="sponsors-track-prog"></div></div>
 </section>
 
-<!-- ═══ IMPORTANT DATES ═══ -->
+<!-- IMPORTANT DATES -->
 <section id="sec-dates">
   <div class="page-wrap narrow">
     <div class="section-eyebrow">Important Dates</div>
@@ -675,36 +881,80 @@ footer{background:var(--choc);color:rgba(255,255,255,.7);padding:40px 24px 24px}
   <div class="sponsors-ticker"><div class="sponsors-track" id="sponsors-track-dates"></div></div>
 </section>
 
-<!-- ═══ SPONSORS ═══ -->
+<!-- AWARDS -->
+<section id="sec-awards">
+  <div class="page-wrap">
+    <div class="section-eyebrow">Recognition</div>
+    <div class="section-title">Conference Awards</div>
+    <div class="section-sub">Celebrating excellence in mineral waste valorization research</div>
+
+    <div class="awards-grid">
+      <div class="award-card">
+        <span class="award-icon">🏆</span>
+        <div class="award-title">Best Poster Presentation</div>
+        <div class="award-desc">Awarded to the researcher who demonstrates outstanding quality, clarity, and impact in their poster presentation during the exhibition session.</div>
+        <ul class="award-criteria">
+          <li>Scientific rigour and originality of research</li>
+          <li>Clarity and visual quality of the poster</li>
+          <li>Ability to communicate findings to a multidisciplinary audience</li>
+          <li>Relevance to mineral waste valorization</li>
+        </ul>
+      </div>
+      <div class="award-card">
+        <span class="award-icon">🎤</span>
+        <div class="award-title">Best Oral Presentation</div>
+        <div class="award-desc">Awarded to the presenter who delivers the most compelling, well-structured, and impactful oral presentation in the technical breakout sessions.</div>
+        <ul class="award-criteria">
+          <li>Quality and significance of research findings</li>
+          <li>Clarity, structure, and delivery of the talk</li>
+          <li>Engagement with audience questions</li>
+          <li>Contribution to the conference theme</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="notice-box" style="margin-top:32px">
+      <strong>Awards will be presented at the Closing Ceremony (3:00 pm).</strong> All award recipients will receive a certificate and recognition from the Conference Chair and organising committee.
+    </div>
+  </div>
+  <div class="sponsors-ticker"><div class="sponsors-track" id="sponsors-track-awards"></div></div>
+</section>
+
+<!-- SPONSORS -->
 <section id="sec-sponsors">
   <div class="page-wrap">
     <div class="section-eyebrow">Sponsors &amp; Partners</div>
     <div class="section-title">Our Supporters</div>
-    <div class="section-sub">We gratefully acknowledge our sponsors and organising partners</div>
+    <div class="section-sub">We gratefully acknowledge the organisations that make MWVRC 2026 possible</div>
 
-    <div class="sponsor-tier">
-      <h3>Industry Partners</h3>
-      <div class="sponsor-logos">
-        <div class="sponsor-logo-card"><img src="images/committee/Intertek Logo.jpeg" alt="Intertek" onerror="this.parentNode.innerHTML='<span style=font-size:14px;font-weight:700;color:var(--choc)>Intertek</span>'"></div>
-        <div class="sponsor-logo-card"><img src="images/committee/MPPE.jpg" alt="MPPE" onerror="this.parentNode.innerHTML='<span style=font-size:14px;font-weight:700;color:var(--choc)>MPPE</span>'"></div>
-        <div class="sponsor-logo-card"><img src="images/committee/Mining Pro (MPPE) Logo.jpeg" alt="Mining Pro" onerror="this.parentNode.innerHTML='<span style=font-size:14px;font-weight:700;color:var(--choc)>Mining Pro</span>'"></div>
-        <div class="sponsor-logo-card"><img src="images/committee/ICMS_Imperial college mine safety logo.jpeg" alt="ICMS" onerror="this.parentNode.innerHTML='<span style=font-size:14px;font-weight:700;color:var(--choc)>ICMS</span>'"></div>
+    <div class="sponsors-all-grid">
+      <div class="sponsor-big-card">
+        <img src="images/committee/Intertek Logo.jpeg" alt="Intertek" onerror="this.parentNode.innerHTML='<div class=sponsor-fallback>Intertek</div>'">
       </div>
-    </div>
-
-    <div class="sponsor-tier">
-      <h3>Organising Partners</h3>
-      <div class="sponsor-logos">
-        <div class="sponsor-logo-card"><img src="images/committee/OWSD logo.jpeg" alt="OWSD" onerror="this.parentNode.innerHTML='<span style=font-size:14px;font-weight:700;color:var(--choc)>OWSD</span>'"></div>
-        <div class="sponsor-logo-card"><img src="images/committee/we africa.png" alt="We Africa" onerror="this.parentNode.innerHTML='<span style=font-size:14px;font-weight:700;color:var(--choc)>We Africa</span>'"></div>
-        <div class="sponsor-logo-card text-only">KNUST<span style="font-size:11px;font-weight:400;color:var(--muted);display:block">Dept. Materials &amp; Metallurgical Engineering</span></div>
+      <div class="sponsor-big-card">
+        <img src="images/committee/MPPE.jpg" alt="MPPE" onerror="this.parentNode.innerHTML='<div class=sponsor-fallback>MPPE</div>'">
+      </div>
+      <div class="sponsor-big-card">
+        <img src="images/committee/Mining Pro (MPPE) Logo.jpeg" alt="Mining Pro" onerror="this.parentNode.innerHTML='<div class=sponsor-fallback>Mining Pro</div>'">
+      </div>
+      <div class="sponsor-big-card">
+        <img src="images/committee/ICMS_Imperial college mine safety logo.jpeg" alt="ICMS" onerror="this.parentNode.innerHTML='<div class=sponsor-fallback>ICMS</div>'">
+      </div>
+      <div class="sponsor-big-card">
+        <img src="images/committee/OWSD logo.jpeg" alt="OWSD" onerror="this.parentNode.innerHTML='<div class=sponsor-fallback>OWSD</div>'">
+      </div>
+      <div class="sponsor-big-card">
+        <img src="images/committee/we africa.png" alt="We Africa" onerror="this.parentNode.innerHTML='<div class=sponsor-fallback>We Africa</div>'">
+      </div>
+      <div class="sponsor-big-card">
+        <div class="sponsor-fallback">KNUST<span style="font-size:13px;font-weight:400;color:var(--muted);display:block;margin-top:4px">Dept. Materials &amp; Metallurgical Engineering</span></div>
       </div>
     </div>
   </div>
   <div class="sponsors-ticker"><div class="sponsors-track" id="sponsors-track-spon"></div></div>
 </section>
 
-<!-- ═══ CONTACT ═══ -->
+<!-- CONTACT -->
 <section id="sec-contact">
   <div class="page-wrap">
     <div class="section-eyebrow">Contact</div>
@@ -731,7 +981,7 @@ footer{background:var(--choc);color:rgba(255,255,255,.7);padding:40px 24px 24px}
   <div class="sponsors-ticker"><div class="sponsors-track" id="sponsors-track-contact"></div></div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -744,12 +994,14 @@ footer{background:var(--choc);color:rgba(255,255,255,.7);padding:40px 24px 24px}
       <a href="#" onclick="showSection('about')">About</a>
       <a href="#" onclick="showSection('committee')">Committee</a>
       <a href="#" onclick="showSection('chairs')">Session Chairs</a>
-      <a href="#" onclick="showSection('speakers')">Speakers</a>
+      <a href="#" onclick="showSection('speakers')">Keynote Speakers</a>
+      <a href="#" onclick="showSection('panel')">Panel Discussion</a>
       <a href="#" onclick="showSection('programme')">Programme</a>
     </div>
     <div class="footer-col">
       <h4>Info</h4>
       <a href="#" onclick="showSection('dates')">Important Dates</a>
+      <a href="#" onclick="showSection('awards')">Awards</a>
       <a href="#" onclick="showSection('sponsors')">Sponsors</a>
       <a href="#" onclick="showSection('contact')">Contact</a>
       <a href="mailto:mwvresearchconference@gmail.com">Email Us</a>
@@ -761,7 +1013,7 @@ footer{background:var(--choc);color:rgba(255,255,255,.7);padding:40px 24px 24px}
   </div>
 </footer>
 
-<!-- ═══ PROFILE MODAL ═══ -->
+<!-- PROFILE MODAL -->
 <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
   <div class="modal-box" id="modal-box">
     <button class="modal-close" onclick="closeModalDirect()">✕ &nbsp; Close Profile</button>
@@ -771,8 +1023,8 @@ footer{background:var(--choc);color:rgba(255,255,255,.7);padding:40px 24px 24px}
 </div>
 
 <script>
-// ── SECTION NAVIGATION ──
-const sectionMap={home:'sec-home',about:'sec-about',committee:'sec-committee',chairs:'sec-chairs',speakers:'sec-speakers',programme:'sec-programme',dates:'sec-dates',sponsors:'sec-sponsors',contact:'sec-contact'};
+// SECTION NAVIGATION
+const sectionMap={home:'sec-home',about:'sec-about',committee:'sec-committee',chairs:'sec-chairs',speakers:'sec-speakers',panel:'sec-panel',programme:'sec-programme',dates:'sec-dates',awards:'sec-awards',sponsors:'sec-sponsors',contact:'sec-contact'};
 function showSection(key){
   Object.values(sectionMap).forEach(id=>{const el=document.getElementById(id);if(el){el.style.display='none';el.classList.remove('active')}});
   const t=document.getElementById(sectionMap[key]);
@@ -783,7 +1035,7 @@ function showSection(key){
 function toggleMobile(){const m=document.getElementById('mobile-menu');m.style.display=m.style.display==='block'?'none':'block'}
 function closeMobile(){document.getElementById('mobile-menu').style.display='none'}
 
-// ── HERO SLIDESHOW ──
+// HERO SLIDESHOW
 const slides=document.querySelectorAll('.hero-slide');
 const dotsContainer=document.getElementById('hero-dots');
 let curSlide=0,slideTimer;
@@ -794,12 +1046,21 @@ slideTimer=setInterval(nextSlide,4500);
 document.getElementById('hero').addEventListener('mouseenter',()=>clearInterval(slideTimer));
 document.getElementById('hero').addEventListener('mouseleave',()=>{slideTimer=setInterval(nextSlide,4500)});
 
-// ── COUNTDOWN ──
+// ABOUT MINI SLIDESHOW
+const aboutSlides=document.querySelectorAll('.about-slide');
+const aboutDotsEl=document.getElementById('about-dots');
+let curAboutSlide=0,aboutTimer;
+aboutSlides.forEach((_,i)=>{const d=document.createElement('div');d.className='about-slide-dot'+(i===0?' active':'');d.onclick=()=>goAboutSlide(i);aboutDotsEl.appendChild(d)});
+function goAboutSlide(n){aboutSlides[curAboutSlide].classList.remove('active');document.querySelectorAll('.about-slide-dot')[curAboutSlide].classList.remove('active');curAboutSlide=n;aboutSlides[curAboutSlide].classList.add('active');document.querySelectorAll('.about-slide-dot')[curAboutSlide].classList.add('active')}
+function nextAboutSlide(){goAboutSlide((curAboutSlide+1)%aboutSlides.length)}
+aboutTimer=setInterval(nextAboutSlide,3800);
+
+// COUNTDOWN
 function updateCountdown(){
   const conf=new Date('2026-06-25T08:30:00').getTime();
   const now=Date.now();
   const diff=conf-now;
-  if(diff<=0){document.getElementById('cd-d').textContent='0';document.getElementById('cd-h').textContent='0';document.getElementById('cd-m').textContent='0';document.getElementById('cd-s').textContent='0';return}
+  if(diff<=0){['cd-d','cd-h','cd-m','cd-s'].forEach(id=>document.getElementById(id).textContent='0');return}
   const d=Math.floor(diff/86400000);
   const h=Math.floor((diff%86400000)/3600000);
   const m=Math.floor((diff%3600000)/60000);
@@ -811,24 +1072,24 @@ function updateCountdown(){
 }
 updateCountdown();setInterval(updateCountdown,1000);
 
-// ── SPONSORS TICKER ──
+// SPONSORS TICKER — using background-color box with image + name
 const SPONSORS=[
-  {img:'images/committee/Intertek Logo.jpeg',name:'Intertek'},
-  {img:'images/committee/MPPE.jpg',name:'MPPE'},
-  {img:'images/committee/Mining Pro (MPPE) Logo.jpeg',name:'Mining Pro'},
-  {img:'images/committee/ICMS_Imperial college mine safety logo.jpeg',name:'ICMS'},
-  {img:'images/committee/OWSD logo.jpeg',name:'OWSD'},
-  {img:'images/committee/we africa.png',name:'We Africa'},
+  {img:'images/committee/Intertek Logo.jpeg',name:'Intertek',bg:'#fff'},
+  {img:'images/committee/MPPE.jpg',name:'MPPE',bg:'#fff'},
+  {img:'images/committee/Mining Pro (MPPE) Logo.jpeg',name:'Mining Pro',bg:'#fff'},
+  {img:'images/committee/ICMS_Imperial college mine safety logo.jpeg',name:'ICMS',bg:'#fff'},
+  {img:'images/committee/OWSD logo.jpeg',name:'OWSD',bg:'#fff'},
+  {img:'images/committee/we africa.png',name:'We Africa',bg:'#fff'},
 ];
 function buildTicker(id){
   const track=document.getElementById(id);
   if(!track)return;
   const doubled=[...SPONSORS,...SPONSORS];
-  track.innerHTML=doubled.map(s=>`<div class="sponsor-item"><img src="${s.img}" alt="${s.name}" onerror="this.style.display='none'"><span class="sponsor-name">${s.name}</span></div>`).join('');
+  track.innerHTML=doubled.map(s=>`<div class="sponsor-item"><div class="sponsor-item-img" style="background:#fff"><img src="${s.img}" alt="${s.name}" onerror="this.parentNode.style.background='rgba(255,255,255,.15)';this.style.display='none'"></div><span class="sponsor-name">${s.name}</span></div>`).join('');
 }
-['sponsors-track','sponsors-track-2','sponsors-track-about','sponsors-track-comm','sponsors-track-chairs','sponsors-track-spk','sponsors-track-prog','sponsors-track-dates','sponsors-track-spon','sponsors-track-contact'].forEach(buildTicker);
+['sponsors-track','sponsors-track-2','sponsors-track-about','sponsors-track-comm','sponsors-track-chairs','sponsors-track-spk','sponsors-track-panel','sponsors-track-prog','sponsors-track-dates','sponsors-track-awards','sponsors-track-spon','sponsors-track-contact'].forEach(buildTicker);
 
-// ── PROFILES DATA ──
+// PROFILES DATA
 const PROFILES={
   provost:{
     photo:'images/committee/Provost.jpg',initials:'KN',
@@ -850,7 +1111,7 @@ const PROFILES={
   bennetta:{
     photo:'images/committee/bennetta-koomson.jpg',initials:'BK',
     name:'Dr. Bennetta Koomson',
-    role:'OWSD Fellow 2023 · Conference Organiser · Keynote Speaker 3',
+    role:'Committee Chair · OWSD Fellow 2023 · Keynote Speaker 3',
     affil:'Senior Lecturer, Dept. Materials and Metallurgical Engineering · KNUST',
     topic:'Keynote Topic: Characterization, Sustainable Processing, and Environmental Management of Mineral Waste',
     bio:`<p>Dr. (Mrs.) Bennetta Koomson is a distinguished Ghanaian Minerals Engineer, Senior Lecturer, and Consulting Engineer at KNUST. Her work focuses on urban mining, mineral waste valorization, and circular economy solutions, transforming hazardous mining and metallurgical waste into safe, value-added materials.</p>
@@ -904,77 +1165,64 @@ const PROFILES={
     topic:'Keynote Topic: Policy, Regulation and Industry Practice in Mineral Waste Management',
     bio:`<p>Dr. Jackson Adiyiah Nyantakyi is an Environmental Scientist and researcher with over 29 publications in peer-reviewed journals. His research area is Environmental Toxicology. He is the Ashanti Regional Director of the Environmental Protection Authority.</p>
     <p>Dr. Nyantakyi holds a First Degree from KNUST, a Post Graduate Degree from China Agricultural University, Beijing, a Master's Degree from the Netherlands, and a Doctorate in Environmental Science from KNUST. He has over 25 years of experience in leadership and is a transformational leader known for his passion for excellence.</p>
-    <p>He is a Member of the International Association of Impact Assessment (IAIA), Vice Chairman of the Tano Basin Board of Water Resources Commission, and a Part-time Lecturer at the University of Energy and Natural Resources (UENR), Sunyani. He has attended many national and international conferences worldwide, including in Scotland, UK, USA, Canada, and Europe.</p>`
+    <p>He is a Member of the International Association of Impact Assessment (IAIA), Vice Chairman of the Tano Basin Board of Water Resources Commission, and a Part-time Lecturer at the University of Energy and Natural Resources (UENR), Sunyani.</p>`
   },
   efiba:{
     photo:'images/committee/Dr. Efiba Vidda.jpeg',initials:'EV',
     name:'Dr. (Mrs.) Efiba Vidda Senkyire Kwarteng',
-    role:'Technical Session Chair · Track 1',
+    role:'Technical Session Chair · Room A (Track 1)',
     affil:'Senior Lecturer, Dept. Geomatic Engineering · KNUST',
     bio:`<p>Dr. Efiba Vidda Senkyire Kwarteng is a Lecturer in the Department of Geomatic Engineering at KNUST, specialising in Spatial Epidemiology, Geospatial Analytics, and Disease Distribution Modelling.</p>
     <p>Her research focuses on leveraging geospatial technologies and environmental intelligence to address complex public health challenges. She has extensive experience applying GIS, Remote Sensing, spatial statistics, and predictive modelling to investigate disease transmission dynamics and health inequalities.</p>
-    <p>Prior to joining academia, she worked in the mining industry across the West African sub-region, gaining expertise in geospatial data acquisition, spatial analysis, and environmental assessment. She currently collaborates with international partners including researchers from the University of Winnipeg, Canada, and Oregon State University, USA.</p>`
+    <p>Prior to joining academia, she worked in the mining industry across the West African sub-region, gaining expertise in geospatial data acquisition, spatial analysis, and environmental assessment.</p>`
   },
   arthur:{
     photo:'images/committee/Dr. Emmanuel Arthur.jpeg',initials:'EA',
     name:'Dr. Emmanuel Kwesi Arthur',
-    role:'Technical Session Chair · Track 2',
+    role:'Technical Session Chair · Room A (Track 1)',
     affil:'Senior Lecturer, Dept. Materials and Metallurgical Engineering · KNUST',
     bio:`<p>Dr. Arthur is a Materials Scientist and Engineer with extensive research experience in environmental remediation, materials selection, and industrial waste utilization. He holds a PhD in Materials Science and Engineering from the African University of Technology, Abuja (with a PhD exchange at Arizona State University, USA).</p>
-    <p>His work directly relevant to mineral waste management includes investigating hazardous cyanide contamination in soils and groundwater — a common issue in gold mining areas — as well as transforming industrial by-products like spent pot lining into porous electrode materials for supercapacitors.</p>
-    <p>Dr. Arthur's broader research spans mechanical metallurgy, surface engineering, and advanced nano/micro-mechanical characterization of metals, ceramics, and composites, with collaboration with international metallurgy and chemical engineering scholars.</p>`
+    <p>His work directly relevant to mineral waste management includes investigating hazardous cyanide contamination in soils and groundwater — a common issue in gold mining areas — as well as transforming industrial by-products like spent pot lining into porous electrode materials for supercapacitors.</p>`
   },
   miriam:{
     photo:'images/committee/Dr. Miriam Brempong.jpeg',initials:'MA',
     name:'Dr. (Mrs.) Miriam Appiah Brempong',
-    role:'Technical Session Chair · Track 3',
+    role:'Technical Session Chair · Room B (Track 2)',
     affil:'Lecturer, Dept. Civil Engineering · KNUST',
     bio:`<p>Dr. Miriam Appiah-Brempong holds a PhD in Environmental Sanitation and Waste Management. As a Water and Sanitary Engineer, she has 13 years of experience in the Water, Sanitation and Hygiene (WASH) sector. Her research focuses on water quality monitoring, solid waste management, and the development of adsorbents and filters for water and wastewater treatment.</p>
-    <p>She undertakes consultancies in water quality analysis, training and capacity building in WASH-related issues, and curriculum development. She has rendered services to organisations including WaterAid Ghana, International Water Management Institute, Ghana Tertiary Education Commission, and DANIDA.</p>
     <p>She is currently the Deputy Postgraduate Coordinator at the Regional Water and Environmental Sanitation Centre, KNUST, and a member of the African Membrane Society.</p>`
   },
   henry:{
     photo:'images/committee/Dr. Henry Agbe.jpeg',initials:'HA',
     name:'Dr. Henry Agbe',
-    role:'Technical Session Chair · Track 4 · Opening &amp; Closing Prayer',
+    role:'Technical Session Chair · Room B (Track 2) · Opening &amp; Closing Prayer',
     affil:'Senior Lecturer, Dept. Materials and Metallurgical Engineering · KNUST',
-    bio:`<p>Dr. Henry Agbe is a multidisciplinary Materials Engineering researcher at KNUST, recognized for contributions to innovative and applied research across Biomedical, Environmental, and Water purification domains. His work is driven by a strong commitment to developing Advanced Material-based solutions to contemporary global challenges.</p>
+    bio:`<p>Dr. Henry Agbe is a multidisciplinary Materials Engineering researcher at KNUST, recognized for contributions to innovative and applied research across Biomedical, Environmental, and Water purification domains.</p>
     <p>Dr. Agbe's research expertise encompasses Antimicrobial Biomaterials Engineering, Mechanobiology and Three-Dimensional Scaffold Engineering, and 3D printing technologies for regenerative medicine. His work extends to bioleaching and bioflotation, integrating principles of Microbiology and Materials Science to develop sustainable approaches for metal recovery and valorization of mineral waste.</p>`
   },
   mizpah:{
     photo:'images/committee/Dr. Mrs. Mizpah Ama Dziedzorm.jpeg',initials:'MR',
     name:'Dr. (Mrs.) Mizpah Ama Dziedzorm Rockson',
-    role:'Technical Session Chair',
+    role:'Technical Session Chair · Room C (Track 3)',
     affil:'Senior Lecturer, Dept. Chemical Engineering · KNUST',
     bio:`<p>Ing. Dr. Mizpah Ama Dziedzorm Rockson is a senior lecturer at the Department of Chemical Engineering, KNUST. She holds BSc (Hons) and PhD in Chemical Engineering, and MEd in Higher Education Pedagogy, all from KNUST.</p>
-    <p>She is a Fellow of the Brew-Hammond Energy Center, KNUST and a Certified Master Trainer in disability inclusion in higher education. She is an active researcher in municipal solid waste management, recycling, waste-to-energy systems, environment and sustainability, and process development for the conversion of local raw materials into useful products.</p>
-    <p>She is a member of the Ghana Institution of Engineering (GhIE) and Ghana Science Association (GSA).</p>`
+    <p>She is a Fellow of the Brew-Hammond Energy Center, KNUST and a Certified Master Trainer in disability inclusion in higher education. She is an active researcher in municipal solid waste management, recycling, waste-to-energy systems, environment and sustainability.</p>`
   },
   emmanuela:{
     photo:'images/committee/Dr. Emmanuela Kwao Boateng.jpeg',initials:'EK',
     name:'Dr. (Mrs.) Emmanuela Kwao-Boateng',
-    role:'Technical Session Chair',
+    role:'Technical Session Chair · Room C (Track 3)',
     affil:'Senior Lecturer, Dept. Chemical Engineering · KNUST',
-    bio:`<p>Dr. Emmanuela Kwao-Boateng is a Chemical/Petrochemical Engineer who holds a BSc in Chemical Engineering from KNUST, a Postgraduate degree from Gubkin Russian State University of Oil and Gas (Moscow), and a PhD in Chemical Engineering from KNUST focused on using microorganisms to reduce high sulphur content in crude oil and diesel fuel.</p>
-    <p>She is passionate about building diligent and committed engineers with a high sense of integrity. She is a corporate member of the Ghana Institution of Engineers (GHIE), current patron of the Women in Engineering (WinE) KNUST Chapter, and the Ashanti Regional Branch Coordinator for Women in Engineering.</p>`
+    bio:`<p>Dr. Emmanuela Kwao-Boateng is a Chemical/Petrochemical Engineer who holds a BSc in Chemical Engineering from KNUST, a Postgraduate degree from Gubkin Russian State University of Oil and Gas (Moscow), and a PhD in Chemical Engineering from KNUST.</p>
+    <p>She is a corporate member of the Ghana Institution of Engineers (GHIE), current patron of the Women in Engineering (WinE) KNUST Chapter, and the Ashanti Regional Branch Coordinator for Women in Engineering.</p>`
   },
 };
 
 function openModal(key){
-  const p=PROFILES[key];
-  if(!p)return;
+  const p=PROFILES[key];if(!p)return;
   const header=document.getElementById('modal-header');
   const body=document.getElementById('modal-body');
-  header.innerHTML=`
-    <div class="modal-photo">
-      <img src="${p.photo}" alt="${p.name}" onerror="this.parentNode.innerHTML='<div class=modal-photo-placeholder>${p.initials}</div>'">
-    </div>
-    <div class="modal-head-info">
-      <div class="modal-name">${p.name}</div>
-      <div class="modal-role">${p.role}</div>
-      <div class="modal-affil">${p.affil}</div>
-      ${p.topic?`<div class="modal-topic">${p.topic}</div>`:''}
-    </div>`;
+  header.innerHTML=`<div class="modal-photo"><img src="${p.photo}" alt="${p.name}" onerror="this.parentNode.innerHTML='<div class=modal-photo-placeholder>${p.initials}</div>'"></div><div class="modal-head-info"><div class="modal-name">${p.name}</div><div class="modal-role">${p.role}</div><div class="modal-affil">${p.affil}</div>${p.topic?`<div class="modal-topic">${p.topic}</div>`:''}</div>`;
   body.innerHTML=p.bio;
   document.getElementById('modal-overlay').classList.add('open');
   document.body.style.overflow='hidden';
