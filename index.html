@@ -9,42 +9,43 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#0b0f24;
-  --navy-mid:#131929;
-  --navy-lt:#1c2540;
-  --navy-card:#1a2035;
-  --yellow:#f5c800;
-  --yellow-lt:#ffe566;
-  --yellow-dark:#c9a000;
-  --white:#ffffff;
-  --off-white:#f0f2f8;
-  --muted:#8892b0;
-  --border:#2a3354;
-  --border-lt:#3a4570;
-  --ink:#ccd6f6;
+  --navy:#1a2340;
+  --navy-mid:#eef1f8;
+  --navy-lt:#dde2ef;
+  --navy-card:#ffffff;
+  --yellow:#c8a000;
+  --yellow-lt:#e6b800;
+  --yellow-dark:#a07800;
+  --white:#1a2340;
+  --off-white:#f5f7fc;
+  --muted:#4a5568;
+  --border:#c5cde0;
+  --border-lt:#a0aec0;
+  --ink:#2d3748;
   --green:#2ecc71;
+  --page-bg:#f0f3fa;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--ink);font-size:15px;line-height:1.7}
+body{font-family:'Inter',sans-serif;background:var(--page-bg);color:var(--ink);font-size:15px;line-height:1.7}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:1000;background:var(--navy-mid);border-bottom:2px solid var(--yellow);box-shadow:0 2px 20px rgba(0,0,0,.5)}
+nav{position:sticky;top:0;z-index:1000;background:#1a2340;border-bottom:3px solid var(--yellow-lt);box-shadow:0 2px 20px rgba(0,0,0,.18)}
 .nav-inner{max-width:1180px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 20px;height:60px}
-.nav-logo{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:900;color:var(--white);text-decoration:none;letter-spacing:.04em}
-.nav-logo span{color:var(--yellow)}
+.nav-logo{font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:900;color:#ffffff;text-decoration:none;letter-spacing:.04em}
+.nav-logo span{color:var(--yellow-lt)}
 .nav-links{display:flex;align-items:center;gap:0;list-style:none}
 .nav-links>li{position:relative}
-.nav-links>li>a{display:block;padding:0 10px;height:60px;line-height:60px;font-size:11.5px;font-weight:600;color:rgba(255,255,255,.8);text-decoration:none;white-space:nowrap;transition:background .15s,color .15s;letter-spacing:.04em;text-transform:uppercase}
-.nav-links>li>a:hover,.nav-links>li:hover>a{background:rgba(245,200,0,.08);color:var(--yellow)}
-.dropdown{display:none;position:absolute;top:60px;left:0;background:var(--navy-mid);min-width:230px;border-top:2px solid var(--yellow);border-radius:0 0 8px 8px;box-shadow:0 8px 30px rgba(0,0,0,.5);list-style:none;z-index:200}
+.nav-links>li>a{display:block;padding:0 10px;height:60px;line-height:60px;font-size:11.5px;font-weight:600;color:rgba(255,255,255,.85);text-decoration:none;white-space:nowrap;transition:background .15s,color .15s;letter-spacing:.04em;text-transform:uppercase}
+.nav-links>li>a:hover,.nav-links>li:hover>a{background:rgba(200,160,0,.15);color:var(--yellow-lt)}
+.dropdown{display:none;position:absolute;top:60px;left:0;background:#1a2340;min-width:230px;border-top:2px solid var(--yellow-lt);border-radius:0 0 8px 8px;box-shadow:0 8px 30px rgba(0,0,0,.25);list-style:none;z-index:200}
 .nav-links>li:hover .dropdown{display:block}
 .dropdown li a{display:block;padding:11px 18px;font-size:12px;font-weight:600;color:rgba(255,255,255,.8);text-decoration:none;transition:background .12s;letter-spacing:.04em;text-transform:uppercase}
-.dropdown li a:hover{background:rgba(245,200,0,.1);color:var(--yellow)}
+.dropdown li a:hover{background:rgba(200,160,0,.15);color:var(--yellow-lt)}
 .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px}
-.hamburger span{display:block;width:24px;height:2px;background:var(--white);margin:5px 0;transition:all .3s}
-.mobile-menu{display:none;background:var(--navy-mid);border-top:1px solid var(--border)}
-.mobile-menu a{display:block;padding:13px 20px;font-size:13px;font-weight:600;color:rgba(255,255,255,.8);text-decoration:none;border-bottom:1px solid var(--border);letter-spacing:.04em;text-transform:uppercase}
-.mobile-menu a:hover{background:rgba(245,200,0,.08);color:var(--yellow)}
+.hamburger span{display:block;width:24px;height:2px;background:#ffffff;margin:5px 0;transition:all .3s}
+.mobile-menu{display:none;background:#1a2340;border-top:1px solid rgba(255,255,255,.1)}
+.mobile-menu a{display:block;padding:13px 20px;font-size:13px;font-weight:600;color:rgba(255,255,255,.8);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.08);letter-spacing:.04em;text-transform:uppercase}
+.mobile-menu a:hover{background:rgba(200,160,0,.12);color:var(--yellow-lt)}
 @media(max-width:1000px){.nav-links{display:none}.hamburger{display:block}}
 
 /* SECTIONS */
@@ -52,283 +53,285 @@ section{display:none}
 section.active{display:block}
 
 /* HERO SLIDESHOW */
-.hero{position:relative;height:90vh;min-height:560px;max-height:860px;overflow:hidden;background:var(--navy)}
+.hero{position:relative;height:90vh;min-height:560px;max-height:860px;overflow:hidden;background:#1a2340}
 .hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;background-size:cover;background-position:center}
 .hero-slide.active{opacity:1}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(11,15,36,.88) 0%,rgba(11,15,36,.72) 50%,rgba(11,15,36,.82) 100%)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(11,15,36,.85) 0%,rgba(11,15,36,.65) 50%,rgba(11,15,36,.78) 100%)}
 .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px;z-index:10}
-.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);margin-bottom:16px;border:1px solid rgba(245,200,0,.35);display:inline-block;padding:5px 16px;border-radius:3px}
-.hero-content h1{font-family:'Montserrat',sans-serif;font-size:clamp(28px,5vw,62px);font-weight:900;color:var(--white);line-height:1.06;text-shadow:0 2px 24px rgba(0,0,0,.7);margin-bottom:6px;letter-spacing:-.02em;text-transform:uppercase}
-.hero-content h1 em{color:var(--yellow);font-style:normal;display:block;font-size:.75em;font-weight:800;margin-top:6px}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow-lt);margin-bottom:16px;border:1px solid rgba(200,160,0,.45);display:inline-block;padding:5px 16px;border-radius:3px}
+.hero-content h1{font-family:'Montserrat',sans-serif;font-size:clamp(28px,5vw,62px);font-weight:900;color:#ffffff;line-height:1.06;text-shadow:0 2px 24px rgba(0,0,0,.7);margin-bottom:6px;letter-spacing:-.02em;text-transform:uppercase}
+.hero-content h1 em{color:var(--yellow-lt);font-style:normal;display:block;font-size:.75em;font-weight:800;margin-top:6px}
 .hero-chips{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:28px 0 36px}
-.hero-chip{background:rgba(255,255,255,.07);border:1.5px solid rgba(245,200,0,.4);padding:8px 20px;border-radius:4px;font-size:13px;font-weight:600;color:var(--white);letter-spacing:.02em}
+.hero-chip{background:rgba(255,255,255,.1);border:1.5px solid rgba(200,160,0,.45);padding:8px 20px;border-radius:4px;font-size:13px;font-weight:600;color:#ffffff;letter-spacing:.02em}
 .hero-btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.btn-primary{background:var(--yellow);color:var(--navy);font-weight:800;padding:14px 38px;border-radius:4px;border:none;font-size:13px;cursor:pointer;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 4px 22px rgba(245,200,0,.3);transition:background .18s,transform .1s;font-family:'Montserrat',sans-serif}
-.btn-primary:hover{background:var(--yellow-lt);transform:translateY(-2px)}
-.btn-ghost{background:transparent;color:var(--white);font-weight:700;padding:14px 38px;border-radius:4px;border:2px solid rgba(255,255,255,.5);font-size:13px;cursor:pointer;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:border-color .18s,background .18s;font-family:'Montserrat',sans-serif}
-.btn-ghost:hover{border-color:var(--yellow);color:var(--yellow);background:rgba(245,200,0,.06)}
+.btn-primary{background:var(--yellow-lt);color:#1a2340;font-weight:800;padding:14px 38px;border-radius:4px;border:none;font-size:13px;cursor:pointer;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 4px 22px rgba(200,160,0,.3);transition:background .18s,transform .1s;font-family:'Montserrat',sans-serif}
+.btn-primary:hover{background:#f5c800;transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#ffffff;font-weight:700;padding:14px 38px;border-radius:4px;border:2px solid rgba(255,255,255,.5);font-size:13px;cursor:pointer;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;transition:border-color .18s,background .18s;font-family:'Montserrat',sans-serif}
+.btn-ghost:hover{border-color:var(--yellow-lt);color:var(--yellow-lt);background:rgba(200,160,0,.08)}
 .hero-dots{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:20}
-.hero-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s,transform .3s}
-.hero-dot.active{background:var(--yellow);transform:scale(1.4)}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;transition:background .3s,transform .3s}
+.hero-dot.active{background:var(--yellow-lt);transform:scale(1.4)}
 
 /* COUNTDOWN */
-.countdown-bar{background:var(--navy-lt);border-bottom:1px solid var(--border);padding:14px 20px;text-align:center}
+.countdown-bar{background:#1a2340;padding:14px 20px;text-align:center}
 .countdown-inner{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
-.countdown-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow)}
+.countdown-label{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow-lt)}
 .countdown-units{display:flex;gap:8px}
-.countdown-unit{background:var(--navy);border:1px solid var(--border);border-radius:6px;padding:8px 14px;text-align:center;min-width:56px}
-.countdown-unit .num{font-family:'Montserrat',sans-serif;font-size:26px;font-weight:900;color:var(--white);line-height:1}
-.countdown-unit .lbl{font-size:9px;color:var(--yellow);text-transform:uppercase;letter-spacing:.1em;margin-top:3px}
+.countdown-unit{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:6px;padding:8px 14px;text-align:center;min-width:56px}
+.countdown-unit .num{font-family:'Montserrat',sans-serif;font-size:26px;font-weight:900;color:#ffffff;line-height:1}
+.countdown-unit .lbl{font-size:9px;color:var(--yellow-lt);text-transform:uppercase;letter-spacing:.1em;margin-top:3px}
 
 /* SPONSORS TICKER */
-.sponsors-ticker{background:var(--navy-mid);padding:14px 0;overflow:hidden;border-top:1px solid var(--border)}
+.sponsors-ticker{background:#ffffff;padding:14px 0;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .sponsors-track{display:flex;align-items:center;gap:48px;animation:ticker 22s linear infinite;white-space:nowrap}
 .sponsors-track:hover{animation-play-state:paused}
 @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .sponsor-item{display:inline-flex;align-items:center;gap:10px;padding:0 8px}
-.sponsor-item-img{width:40px;height:40px;border-radius:6px;overflow:hidden;background:rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
-.sponsor-item-img img{width:100%;height:100%;object-fit:contain;display:block}
-.sponsor-name{font-size:12px;font-weight:700;color:rgba(255,255,255,.7);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase}
+/* Logo shapes — fit naturally, no forced box */
+.sponsor-item-img{height:42px;width:auto;max-width:90px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.sponsor-item-img img{height:100%;width:auto;max-width:90px;object-fit:contain;display:block}
+.sponsor-name{font-size:12px;font-weight:700;color:var(--muted);white-space:nowrap;letter-spacing:.06em;text-transform:uppercase}
 
 /* PAGE WRAPPER */
 .page-wrap{max-width:1140px;margin:0 auto;padding:56px 20px}
 .page-wrap.narrow{max-width:780px}
-.section-eyebrow{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);margin-bottom:8px}
-.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(22px,3.5vw,36px);font-weight:900;color:var(--white);margin-bottom:10px;line-height:1.1;text-transform:uppercase;letter-spacing:-.01em}
+.section-eyebrow{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow-dark);margin-bottom:8px}
+.section-title{font-family:'Montserrat',sans-serif;font-size:clamp(22px,3.5vw,36px);font-weight:900;color:#1a2340;margin-bottom:10px;line-height:1.1;text-transform:uppercase;letter-spacing:-.01em}
 .section-sub{font-size:13.5px;color:var(--muted);margin-bottom:40px;padding-bottom:20px;border-bottom:1px solid var(--border)}
 
 /* FEATURED PEOPLE */
 .featured-people{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
 @media(max-width:700px){.featured-people{grid-template-columns:1fr}}
 @media(min-width:701px) and (max-width:900px){.featured-people{grid-template-columns:1fr 1fr}}
-.featured-card{background:var(--navy-card);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:box-shadow .2s,transform .2s,border-color .2s;cursor:pointer}
-.featured-card:hover{box-shadow:0 8px 32px rgba(245,200,0,.15);transform:translateY(-3px);border-color:var(--yellow)}
-.featured-photo{width:100%;aspect-ratio:1/1;overflow:hidden;background:var(--navy-lt)}
+.featured-card{background:#ffffff;border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:box-shadow .2s,transform .2s,border-color .2s;cursor:pointer;box-shadow:0 2px 8px rgba(26,35,64,.06)}
+.featured-card:hover{box-shadow:0 8px 32px rgba(26,35,64,.15);transform:translateY(-3px);border-color:var(--yellow-lt)}
+.featured-photo{width:100%;aspect-ratio:1/1;overflow:hidden;background:#dde2ef}
 .featured-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .featured-body{padding:16px 18px 18px}
-.featured-name{font-weight:700;font-size:14px;color:var(--white);margin-bottom:3px;font-family:'Montserrat',sans-serif}
-.featured-role{font-size:10.5px;font-weight:700;color:var(--yellow);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
+.featured-name{font-weight:700;font-size:14px;color:#1a2340;margin-bottom:3px;font-family:'Montserrat',sans-serif}
+.featured-role{font-size:10.5px;font-weight:700;color:var(--yellow-dark);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px}
 .featured-affil{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:12px}
 .btn-profile{display:inline-block;background:transparent;border:1.5px solid var(--border-lt);color:var(--muted);padding:5px 16px;border-radius:4px;font-size:11px;font-weight:700;cursor:pointer;transition:all .15s;font-family:'Montserrat',sans-serif;text-decoration:none;text-transform:uppercase;letter-spacing:.04em}
-.btn-profile:hover{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+.btn-profile:hover{background:var(--yellow-lt);color:#1a2340;border-color:var(--yellow-lt)}
 
-/* TRACKS - 3 rooms */
+/* TRACKS */
 .tracks{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
 @media(max-width:900px){.tracks{grid-template-columns:1fr 1fr}}
 @media(max-width:580px){.tracks{grid-template-columns:1fr}}
-.track-card{background:var(--navy-card);border:1px solid var(--border);border-radius:8px;padding:22px;border-top:3px solid var(--yellow);transition:border-color .2s,transform .2s}
-.track-card:hover{transform:translateY(-2px);border-color:var(--yellow-lt)}
-.track-code{display:inline-block;background:var(--yellow);color:var(--navy);font-size:10px;font-weight:800;padding:3px 10px;border-radius:3px;margin-bottom:12px;letter-spacing:.06em;text-transform:uppercase;font-family:'Montserrat',sans-serif}
-.track-card h3{font-size:13.5px;font-weight:600;color:var(--white);line-height:1.55}
+.track-card{background:#ffffff;border:1px solid var(--border);border-radius:8px;padding:22px;border-top:3px solid var(--yellow-lt);transition:border-color .2s,transform .2s;box-shadow:0 2px 8px rgba(26,35,64,.05)}
+.track-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,35,64,.1)}
+.track-code{display:inline-block;background:var(--yellow-lt);color:#1a2340;font-size:10px;font-weight:800;padding:3px 10px;border-radius:3px;margin-bottom:12px;letter-spacing:.06em;text-transform:uppercase;font-family:'Montserrat',sans-serif}
+.track-card h3{font-size:13.5px;font-weight:600;color:#1a2340;line-height:1.55}
 .track-card p{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.6}
 
 /* LOCATION CARD */
-.location-card{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:10px;overflow:hidden;border:1px solid var(--border);margin-top:40px;box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.location-card{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:10px;overflow:hidden;border:1px solid var(--border);margin-top:40px;box-shadow:0 2px 20px rgba(26,35,64,.08)}
 @media(max-width:680px){.location-card{grid-template-columns:1fr}}
-.location-photo{min-height:260px;overflow:hidden;background:var(--navy-lt)}
+.location-photo{min-height:260px;overflow:hidden;background:#dde2ef}
 .location-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.location-info{background:var(--navy-card);padding:36px 30px;display:flex;flex-direction:column;justify-content:center}
-.location-info h3{font-family:'Montserrat',sans-serif;font-size:22px;color:var(--white);margin-bottom:14px;font-weight:800;text-transform:uppercase}
+.location-info{background:#ffffff;padding:36px 30px;display:flex;flex-direction:column;justify-content:center}
+.location-info h3{font-family:'Montserrat',sans-serif;font-size:22px;color:#1a2340;margin-bottom:14px;font-weight:800;text-transform:uppercase}
 .location-info p{font-size:13.5px;color:var(--ink);line-height:1.75;margin-bottom:10px}
 
 /* ABOUT SLIDESHOW */
-.about-slideshow{position:relative;width:100%;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:var(--navy-lt)}
+.about-slideshow{position:relative;width:100%;aspect-ratio:4/3;border-radius:10px;overflow:hidden;background:#dde2ef}
 .about-slide{position:absolute;inset:0;opacity:0;transition:opacity 1s ease;background-size:cover;background-position:center}
 .about-slide.active{opacity:1}
 .about-slide-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:10}
-.about-slide-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:background .3s}
-.about-slide-dot.active{background:var(--yellow)}
+.about-slide-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.5);cursor:pointer;transition:background .3s}
+.about-slide-dot.active{background:var(--yellow-lt)}
 
 /* ABOUT */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 @media(max-width:700px){.about-grid{grid-template-columns:1fr}}
 .about-body p{margin-bottom:16px;color:var(--ink);line-height:1.8;font-size:14px}
-.about-box{background:var(--navy-card);border:1px solid var(--border);border-radius:8px;padding:22px;margin-bottom:18px}
-.about-box h3{font-family:'Montserrat',sans-serif;font-size:17px;color:var(--white);margin-bottom:12px;font-weight:700;text-transform:uppercase}
+.about-box{background:#ffffff;border:1px solid var(--border);border-radius:8px;padding:22px;margin-bottom:18px;box-shadow:0 1px 4px rgba(26,35,64,.05)}
+.about-box h3{font-family:'Montserrat',sans-serif;font-size:17px;color:#1a2340;margin-bottom:12px;font-weight:700;text-transform:uppercase}
 .about-box p{font-size:13px;color:var(--muted);line-height:1.7}
 .objectives{list-style:none;margin-top:10px}
 .objectives li{padding:8px 0 8px 22px;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink);position:relative}
-.objectives li::before{content:'';position:absolute;left:0;top:18px;width:7px;height:7px;border-radius:50%;background:var(--yellow)}
+.objectives li::before{content:'';position:absolute;left:0;top:18px;width:7px;height:7px;border-radius:50%;background:var(--yellow-lt)}
 .objectives li:last-child{border-bottom:none}
 
 /* PEOPLE SECTION */
 .people-section{margin-bottom:52px}
-.people-section-title{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;color:var(--white);margin-bottom:8px;padding-bottom:10px;border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:.02em}
+.people-section-title{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;color:#1a2340;margin-bottom:8px;padding-bottom:10px;border-bottom:1px solid var(--border);text-transform:uppercase;letter-spacing:.02em}
 .people-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:18px;margin-top:22px}
-.person-card{background:var(--navy-card);border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:box-shadow .2s,transform .2s,border-color .2s;cursor:pointer}
-.person-card:hover{box-shadow:0 6px 24px rgba(245,200,0,.15);transform:translateY(-2px);border-color:var(--yellow)}
-.person-photo{width:100%;aspect-ratio:1/1;overflow:hidden;background:var(--navy-lt);display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:34px;font-weight:900;color:var(--yellow)}
+.person-card{background:#ffffff;border:1px solid var(--border);border-radius:10px;overflow:hidden;transition:box-shadow .2s,transform .2s,border-color .2s;cursor:pointer;box-shadow:0 2px 8px rgba(26,35,64,.05)}
+.person-card:hover{box-shadow:0 6px 24px rgba(26,35,64,.12);transform:translateY(-2px);border-color:var(--yellow-lt)}
+.person-photo{width:100%;aspect-ratio:1/1;overflow:hidden;background:#dde2ef;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:34px;font-weight:900;color:var(--yellow-dark)}
 .person-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .person-body{padding:14px 14px 16px}
-.person-name{font-weight:700;font-size:13px;color:var(--white);margin-bottom:3px;line-height:1.35;font-family:'Montserrat',sans-serif}
-.person-role{font-size:10px;font-weight:700;color:var(--yellow);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
+.person-name{font-weight:700;font-size:13px;color:#1a2340;margin-bottom:3px;line-height:1.35;font-family:'Montserrat',sans-serif}
+.person-role{font-size:10px;font-weight:700;color:var(--yellow-dark);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px}
 .person-affil{font-size:11.5px;color:var(--muted);line-height:1.4;margin-bottom:10px}
 .btn-view-profile{display:inline-block;background:transparent;border:1.5px solid var(--border-lt);color:var(--muted);padding:4px 12px;border-radius:4px;font-size:10.5px;font-weight:700;cursor:pointer;transition:all .15s;font-family:'Montserrat',sans-serif;text-transform:uppercase;letter-spacing:.04em}
-.btn-view-profile:hover{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+.btn-view-profile:hover{background:var(--yellow-lt);color:#1a2340;border-color:var(--yellow-lt)}
 
 /* ROOM GRID */
 .room-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}
 @media(max-width:800px){.room-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:500px){.room-grid{grid-template-columns:1fr}}
-.room-card{background:var(--navy-card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
-.room-header{background:var(--navy-lt);padding:16px 18px;border-bottom:2px solid var(--yellow)}
-.room-title{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:900;color:var(--yellow);margin-bottom:4px;text-transform:uppercase}
-.room-themes{font-size:11.5px;color:var(--muted);line-height:1.5}
+.room-card{background:#ffffff;border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:0 2px 8px rgba(26,35,64,.05)}
+.room-header{background:#1a2340;padding:16px 18px;border-bottom:2px solid var(--yellow-lt)}
+.room-title{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:900;color:var(--yellow-lt);margin-bottom:4px;text-transform:uppercase}
+.room-themes{font-size:11.5px;color:rgba(255,255,255,.7);line-height:1.5}
 .room-body{padding:16px 18px}
-.room-role-label{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow);margin-bottom:10px;margin-top:12px}
+.room-role-label{font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow-dark);margin-bottom:10px;margin-top:12px}
 .room-role-label:first-child{margin-top:0}
 .room-person{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);cursor:pointer}
 .room-person:last-child{border-bottom:none}
-.room-avatar{width:38px;height:38px;border-radius:50%;overflow:hidden;background:var(--navy-lt);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:900;color:var(--yellow)}
+.room-avatar{width:38px;height:38px;border-radius:50%;overflow:hidden;background:#dde2ef;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:900;color:var(--yellow-dark)}
 .room-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top}
-.room-person-name{font-size:12px;font-weight:600;color:var(--white);line-height:1.3}
+.room-person-name{font-size:12px;font-weight:600;color:#1a2340;line-height:1.3}
 .room-person-dept{font-size:11px;color:var(--muted)}
 
 /* SPEAKER CARDS */
 .speaker-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px;margin-top:28px}
-.speaker-card{background:var(--navy-card);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:box-shadow .2s,transform .2s,border-color .2s}
-.speaker-card:hover{box-shadow:0 8px 30px rgba(245,200,0,.15);transform:translateY(-3px);border-color:var(--yellow)}
-.speaker-photo{width:100%;height:220px;overflow:hidden;background:var(--navy-lt);display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:52px;font-weight:900;color:var(--yellow)}
+.speaker-card{background:#ffffff;border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:box-shadow .2s,transform .2s,border-color .2s;box-shadow:0 2px 8px rgba(26,35,64,.06)}
+.speaker-card:hover{box-shadow:0 8px 30px rgba(26,35,64,.14);transform:translateY(-3px);border-color:var(--yellow-lt)}
+.speaker-photo{width:100%;height:220px;overflow:hidden;background:#dde2ef;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:52px;font-weight:900;color:var(--yellow-dark)}
 .speaker-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .speaker-body{padding:18px}
-.speaker-name{font-weight:800;font-size:14px;color:var(--white);margin-bottom:3px;font-family:'Montserrat',sans-serif}
+.speaker-name{font-weight:800;font-size:14px;color:#1a2340;margin-bottom:3px;font-family:'Montserrat',sans-serif}
 .speaker-title{font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.45}
 .speaker-topic{font-size:12px;color:var(--ink);font-style:italic;border-top:1px solid var(--border);padding-top:10px;line-height:1.5;margin-bottom:12px}
 
 /* PANEL */
-.panel-question{background:var(--navy-card);border:1px solid var(--border);border-radius:10px;padding:26px;margin-bottom:18px;position:relative;transition:border-color .2s}
-.panel-question:hover{border-color:rgba(245,200,0,.4)}
-.panel-q-num{font-family:'Montserrat',sans-serif;font-size:48px;font-weight:900;color:rgba(245,200,0,.08);position:absolute;top:12px;right:16px;line-height:1}
+.panel-question{background:#ffffff;border:1px solid var(--border);border-radius:10px;padding:26px;margin-bottom:18px;position:relative;transition:border-color .2s;box-shadow:0 2px 8px rgba(26,35,64,.05)}
+.panel-question:hover{border-color:var(--yellow-lt)}
+.panel-q-num{font-family:'Montserrat',sans-serif;font-size:48px;font-weight:900;color:rgba(200,160,0,.12);position:absolute;top:12px;right:16px;line-height:1}
 .panel-q-header{display:flex;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap}
-.panel-sponsor-badge{display:flex;align-items:center;gap:8px;background:var(--navy-lt);border:1px solid var(--border);border-radius:6px;padding:5px 10px 5px 7px;flex-shrink:0}
-.panel-sponsor-badge img{height:28px;width:auto;max-width:56px;object-fit:contain;border-radius:3px}
-.panel-sponsor-badge span{font-size:10.5px;font-weight:700;color:var(--yellow);letter-spacing:.06em;white-space:nowrap;text-transform:uppercase}
-.panel-q-title{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--white);line-height:1.3;flex:1}
+.panel-sponsor-badge{display:flex;align-items:center;gap:8px;background:#f0f3fa;border:1px solid var(--border);border-radius:6px;padding:5px 10px 5px 7px;flex-shrink:0}
+/* Logo image in badge — natural shape, no forced box */
+.panel-sponsor-badge img{height:32px;width:auto;max-width:64px;object-fit:contain;border-radius:0}
+.panel-sponsor-badge span{font-size:10.5px;font-weight:700;color:var(--yellow-dark);letter-spacing:.06em;white-space:nowrap;text-transform:uppercase}
+.panel-q-title{font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:#1a2340;line-height:1.3;flex:1}
 .panel-q-body{font-size:13px;color:var(--ink);line-height:1.85}
 
 /* PROGRAMME */
 .programme-layout{display:grid;grid-template-columns:1fr 270px;gap:28px;align-items:start}
 @media(max-width:820px){.programme-layout{grid-template-columns:1fr}}
 .programme-table{width:100%;border-collapse:collapse;margin-top:0}
-.programme-table th{background:var(--navy-lt);color:var(--yellow);padding:12px 16px;font-size:11px;font-weight:700;text-align:left;letter-spacing:.1em;text-transform:uppercase;border-bottom:2px solid var(--yellow)}
+.programme-table th{background:#1a2340;color:var(--yellow-lt);padding:12px 16px;font-size:11px;font-weight:700;text-align:left;letter-spacing:.1em;text-transform:uppercase;border-bottom:2px solid var(--yellow-lt)}
 .programme-table td{padding:12px 16px;font-size:13px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--ink)}
-.programme-table tr:nth-child(even) td{background:rgba(255,255,255,.02)}
-.programme-table tr:hover td{background:rgba(245,200,0,.04)}
-.prog-time{font-weight:700;color:var(--yellow);white-space:nowrap;font-size:12.5px}
-.prog-session{font-weight:700;color:var(--white);margin-bottom:2px;font-family:'Montserrat',sans-serif;font-size:13px}
+.programme-table tr:nth-child(even) td{background:rgba(26,35,64,.02)}
+.programme-table tr:hover td{background:rgba(200,160,0,.05)}
+.prog-time{font-weight:700;color:var(--yellow-dark);white-space:nowrap;font-size:12.5px}
+.prog-session{font-weight:700;color:#1a2340;margin-bottom:2px;font-family:'Montserrat',sans-serif;font-size:13px}
 .prog-detail{color:var(--muted);font-size:12px;margin-top:3px;line-height:1.55}
-tr.prog-break td{background:rgba(245,200,0,.04)!important}
-tr.prog-highlight td{background:rgba(245,200,0,.06)!important;border-left:3px solid var(--yellow)}
-.moderator-card{background:var(--navy-card);border:1px solid var(--border);border-radius:10px;overflow:hidden;position:sticky;top:78px}
-.moderator-photo{width:100%;height:240px;overflow:hidden;background:var(--navy-lt)}
+tr.prog-break td{background:rgba(200,160,0,.04)!important}
+tr.prog-highlight td{background:rgba(26,35,64,.04)!important;border-left:3px solid var(--yellow-lt)}
+.moderator-card{background:#ffffff;border:1px solid var(--border);border-radius:10px;overflow:hidden;position:sticky;top:78px;box-shadow:0 2px 12px rgba(26,35,64,.08)}
+.moderator-photo{width:100%;height:240px;overflow:hidden;background:#dde2ef}
 .moderator-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .moderator-body{padding:18px}
-.moderator-eyebrow{font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:6px}
-.moderator-name{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:var(--white);margin-bottom:4px}
+.moderator-eyebrow{font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow-dark);margin-bottom:6px}
+.moderator-name{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;color:#1a2340;margin-bottom:4px}
 .moderator-role{font-size:12px;color:var(--muted);line-height:1.5}
 
 /* DATES */
 .dates-list{margin-top:24px}
-.date-row{display:flex;align-items:center;gap:18px;padding:16px 18px;background:var(--navy-card);border:1px solid var(--border);border-radius:8px;margin-bottom:12px;flex-wrap:wrap;gap:16px}
-.date-badge{flex-shrink:0;width:64px;text-align:center;background:var(--navy-lt);border:1px solid var(--border);border-radius:8px;padding:8px 4px}
-.date-month{font-size:9.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--yellow);font-weight:700}
-.date-day{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:900;color:var(--white);line-height:1.1}
-.date-info h4{font-size:14px;font-weight:700;color:var(--white);font-family:'Montserrat',sans-serif}
+.date-row{display:flex;align-items:center;gap:18px;padding:16px 18px;background:#ffffff;border:1px solid var(--border);border-radius:8px;margin-bottom:12px;flex-wrap:wrap;box-shadow:0 1px 4px rgba(26,35,64,.05)}
+.date-badge{flex-shrink:0;width:64px;text-align:center;background:#f0f3fa;border:1px solid var(--border);border-radius:8px;padding:8px 4px}
+.date-month{font-size:9.5px;text-transform:uppercase;letter-spacing:.12em;color:var(--yellow-dark);font-weight:700}
+.date-day{font-family:'Montserrat',sans-serif;font-size:24px;font-weight:900;color:#1a2340;line-height:1.1}
+.date-info h4{font-size:14px;font-weight:700;color:#1a2340;font-family:'Montserrat',sans-serif}
 .date-info p{font-size:12.5px;color:var(--muted)}
-.date-conference .date-badge{background:var(--yellow);border-color:var(--yellow)}
-.date-conference .date-badge .date-month{color:var(--navy)}
-.date-conference .date-badge .date-day{color:var(--navy)}
+.date-conference .date-badge{background:var(--yellow-lt);border-color:var(--yellow-lt)}
+.date-conference .date-badge .date-month{color:#1a2340}
+.date-conference .date-badge .date-day{color:#1a2340}
 .status-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 10px;border-radius:10px;text-transform:uppercase;letter-spacing:.06em;margin-left:8px;vertical-align:middle}
-.badge-closed{background:rgba(255,255,255,.08);color:var(--muted)}
-.badge-upcoming{background:var(--yellow);color:var(--navy)}
+.badge-closed{background:rgba(26,35,64,.08);color:var(--muted)}
+.badge-upcoming{background:var(--yellow-lt);color:#1a2340}
 
-/* SPONSORS */
+/* SPONSORS PAGE */
 .sponsors-all-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:20px;margin-top:36px}
-.sponsor-big-card{background:var(--navy-card);border:1px solid var(--border);border-radius:10px;padding:28px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:130px;transition:box-shadow .2s,transform .2s,border-color .2s}
-.sponsor-big-card:hover{box-shadow:0 6px 24px rgba(245,200,0,.15);transform:translateY(-2px);border-color:rgba(245,200,0,.4)}
-.sponsor-big-card img{max-height:72px;max-width:150px;width:auto;object-fit:contain;display:block;filter:brightness(1.1)}
-.sponsor-big-card .sponsor-fallback{font-size:16px;font-weight:800;color:var(--white);text-align:center;line-height:1.4;font-family:'Montserrat',sans-serif}
+.sponsor-big-card{background:#ffffff;border:1px solid var(--border);border-radius:10px;padding:28px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:130px;transition:box-shadow .2s,transform .2s,border-color .2s;box-shadow:0 2px 8px rgba(26,35,64,.05)}
+.sponsor-big-card:hover{box-shadow:0 6px 24px rgba(26,35,64,.12);transform:translateY(-2px);border-color:var(--yellow-lt)}
+/* Natural logo shape — no forced box, no background color, fit naturally */
+.sponsor-big-card img{max-height:80px;max-width:160px;width:auto;object-fit:contain;display:block}
+.sponsor-big-card .sponsor-fallback{font-size:16px;font-weight:800;color:#1a2340;text-align:center;line-height:1.4;font-family:'Montserrat',sans-serif}
 
 /* AWARDS */
 .awards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:36px}
-.award-card{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:30px;text-align:center;position:relative;overflow:hidden;transition:border-color .2s}
-.award-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--yellow),var(--yellow-lt))}
-.award-card:hover{border-color:rgba(245,200,0,.4)}
+.award-card{background:#ffffff;border:1px solid var(--border);border-radius:12px;padding:30px;text-align:center;position:relative;overflow:hidden;transition:border-color .2s;box-shadow:0 2px 8px rgba(26,35,64,.06)}
+.award-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--yellow-lt),#f5c800)}
+.award-card:hover{border-color:var(--yellow-lt)}
 .award-icon{font-size:44px;margin-bottom:14px;display:block}
-.award-title{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:var(--white);margin-bottom:8px;text-transform:uppercase}
+.award-title{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:#1a2340;margin-bottom:8px;text-transform:uppercase}
 .award-desc{font-size:13px;color:var(--muted);line-height:1.7}
-.award-criteria{margin-top:16px;background:var(--navy-lt);border-radius:8px;padding:14px;text-align:left;list-style:none}
+.award-criteria{margin-top:16px;background:#f0f3fa;border-radius:8px;padding:14px;text-align:left;list-style:none}
 .award-criteria li{font-size:12px;color:var(--ink);margin-bottom:6px;padding-left:14px;position:relative}
-.award-criteria li::before{content:'✓';position:absolute;left:0;color:var(--yellow);font-weight:700}
+.award-criteria li::before{content:'✓';position:absolute;left:0;color:var(--yellow-dark);font-weight:700}
 
 /* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
 @media(max-width:700px){.contact-grid{grid-template-columns:1fr}}
-.contact-card{background:var(--navy-card);border:1px solid var(--border);border-radius:10px;padding:26px}
-.contact-card h3{font-family:'Montserrat',sans-serif;font-size:17px;color:var(--white);margin-bottom:18px;font-weight:800;text-transform:uppercase}
+.contact-card{background:#ffffff;border:1px solid var(--border);border-radius:10px;padding:26px;box-shadow:0 2px 8px rgba(26,35,64,.05)}
+.contact-card h3{font-family:'Montserrat',sans-serif;font-size:17px;color:#1a2340;margin-bottom:18px;font-weight:800;text-transform:uppercase}
 .contact-item{display:flex;gap:12px;margin-bottom:16px;font-size:13px;color:var(--ink)}
 .contact-icon{font-size:17px;flex-shrink:0;margin-top:2px}
-.contact-item a{color:var(--yellow);text-decoration:none}
+.contact-item a{color:var(--yellow-dark);text-decoration:none}
 .contact-item a:hover{text-decoration:underline}
 .form-group{margin-bottom:16px}
 .form-group label{display:block;font-size:12px;font-weight:600;color:var(--muted);margin-bottom:7px;text-transform:uppercase;letter-spacing:.06em}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:6px;font-family:'Inter',sans-serif;font-size:14px;color:var(--white);background:var(--navy-lt);outline:none;transition:border-color .18s,box-shadow .18s}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--yellow);box-shadow:0 0 0 3px rgba(245,200,0,.1)}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:11px 14px;border:1.5px solid var(--border);border-radius:6px;font-family:'Inter',sans-serif;font-size:14px;color:var(--ink);background:#f8f9fc;outline:none;transition:border-color .18s,box-shadow .18s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--yellow-lt);box-shadow:0 0 0 3px rgba(200,160,0,.12)}
 .form-group textarea{min-height:100px;resize:vertical;line-height:1.7}
-.btn-submit{background:var(--yellow);color:var(--navy);padding:12px 34px;border:none;border-radius:4px;font-size:13px;font-weight:800;cursor:pointer;font-family:'Montserrat',sans-serif;transition:background .18s;text-transform:uppercase;letter-spacing:.06em}
-.btn-submit:hover{background:var(--yellow-lt)}
+.btn-submit{background:var(--yellow-lt);color:#1a2340;padding:12px 34px;border:none;border-radius:4px;font-size:13px;font-weight:800;cursor:pointer;font-family:'Montserrat',sans-serif;transition:background .18s;text-transform:uppercase;letter-spacing:.06em}
+.btn-submit:hover{background:#f5c800}
 
 /* NOTICE */
-.notice-box{background:rgba(245,200,0,.06);border-left:3px solid var(--yellow);border-radius:0 8px 8px 0;padding:14px 18px;font-size:13px;color:var(--ink);line-height:1.65;margin-bottom:22px}
-.notice-box strong{color:var(--yellow)}
-.notice-box a{color:var(--yellow)}
+.notice-box{background:rgba(200,160,0,.07);border-left:3px solid var(--yellow-lt);border-radius:0 8px 8px 0;padding:14px 18px;font-size:13px;color:var(--ink);line-height:1.65;margin-bottom:22px}
+.notice-box strong{color:var(--yellow-dark)}
+.notice-box a{color:var(--yellow-dark)}
 
 /* JUST BANNER */
-.just-banner{background:linear-gradient(135deg,var(--navy-lt) 0%,rgba(245,200,0,.08) 100%);border:1px solid rgba(245,200,0,.3);border-radius:10px;padding:26px 28px;margin-top:40px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.just-banner{background:linear-gradient(135deg,#eef1f8 0%,rgba(200,160,0,.06) 100%);border:1px solid rgba(200,160,0,.3);border-radius:10px;padding:26px 28px;margin-top:40px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .just-banner-icon{font-size:38px;flex-shrink:0}
-.just-banner-text h3{font-family:'Montserrat',sans-serif;font-size:17px;color:var(--white);margin-bottom:4px;font-weight:800;text-transform:uppercase}
+.just-banner-text h3{font-family:'Montserrat',sans-serif;font-size:17px;color:#1a2340;margin-bottom:4px;font-weight:800;text-transform:uppercase}
 .just-banner-text p{font-size:13px;color:var(--muted);line-height:1.6}
-.just-banner-badge{background:var(--yellow);color:var(--navy);font-size:11px;font-weight:800;padding:6px 16px;border-radius:20px;letter-spacing:.06em;flex-shrink:0;white-space:nowrap;font-family:'Montserrat',sans-serif;text-transform:uppercase}
+.just-banner-badge{background:var(--yellow-lt);color:#1a2340;font-size:11px;font-weight:800;padding:6px 16px;border-radius:20px;letter-spacing:.06em;flex-shrink:0;white-space:nowrap;font-family:'Montserrat',sans-serif;text-transform:uppercase}
 
 /* MODAL */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:9000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s}
 .modal-overlay.open{opacity:1;pointer-events:all}
-.modal-box{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;max-width:660px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.7);transform:translateY(20px);transition:transform .25s}
+.modal-box{background:#ffffff;border:1px solid var(--border);border-radius:12px;max-width:660px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(26,35,64,.25);transform:translateY(20px);transition:transform .25s}
 .modal-overlay.open .modal-box{transform:translateY(0)}
 .modal-header{display:grid;grid-template-columns:140px 1fr;gap:0;border-radius:12px 12px 0 0;overflow:hidden;border-bottom:1px solid var(--border)}
-.modal-photo{min-height:160px;background:var(--navy-lt);overflow:hidden}
+.modal-photo{min-height:160px;background:#dde2ef;overflow:hidden}
 .modal-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.modal-photo-placeholder{width:100%;height:100%;min-height:160px;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:44px;font-weight:900;color:var(--yellow);background:var(--navy-lt)}
-.modal-head-info{padding:22px 22px;background:var(--navy-lt)}
-.modal-name{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;color:var(--white);margin-bottom:4px;line-height:1.2}
-.modal-role{font-size:10.5px;font-weight:700;color:var(--yellow);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.modal-photo-placeholder{width:100%;height:100%;min-height:160px;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-size:44px;font-weight:900;color:var(--yellow-dark);background:#dde2ef}
+.modal-head-info{padding:22px 22px;background:#f0f3fa}
+.modal-name{font-family:'Montserrat',sans-serif;font-size:22px;font-weight:900;color:#1a2340;margin-bottom:4px;line-height:1.2}
+.modal-role{font-size:10.5px;font-weight:700;color:var(--yellow-dark);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
 .modal-affil{font-size:12.5px;color:var(--muted);line-height:1.5}
-.modal-topic{margin-top:10px;font-size:12.5px;color:var(--ink);font-style:italic;background:rgba(245,200,0,.08);border:1px solid rgba(245,200,0,.2);padding:8px 12px;border-radius:6px;line-height:1.5}
+.modal-topic{margin-top:10px;font-size:12.5px;color:var(--ink);font-style:italic;background:rgba(200,160,0,.08);border:1px solid rgba(200,160,0,.25);padding:8px 12px;border-radius:6px;line-height:1.5}
 .modal-body{padding:22px}
 .modal-body p{font-size:13.5px;color:var(--ink);line-height:1.8;margin-bottom:14px}
 .modal-body ul{margin:0 0 14px 20px}
 .modal-body li{font-size:13px;color:var(--ink);line-height:1.7;margin-bottom:6px}
-.modal-close{position:sticky;top:0;width:100%;background:var(--navy-lt);color:var(--yellow);border:none;border-bottom:1px solid var(--border);padding:12px;font-size:12.5px;font-weight:700;cursor:pointer;border-radius:12px 12px 0 0;display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Montserrat',sans-serif;z-index:10;text-transform:uppercase;letter-spacing:.06em}
-.modal-close:hover{background:var(--navy)}
+.modal-close{position:sticky;top:0;width:100%;background:#1a2340;color:var(--yellow-lt);border:none;border-bottom:1px solid rgba(255,255,255,.1);padding:12px;font-size:12.5px;font-weight:700;cursor:pointer;border-radius:12px 12px 0 0;display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Montserrat',sans-serif;z-index:10;text-transform:uppercase;letter-spacing:.06em}
+.modal-close:hover{background:#0f172a}
 @media(max-width:560px){.modal-header{grid-template-columns:1fr}.modal-photo{min-height:200px}}
 
 /* FOOTER */
-footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(255,255,255,.6);padding:40px 20px 24px}
+footer{background:#1a2340;border-top:3px solid var(--yellow-lt);color:rgba(255,255,255,.6);padding:40px 20px 24px}
 .footer-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px;margin-bottom:28px}
 @media(max-width:700px){.footer-inner{grid-template-columns:1fr;gap:22px}}
-.footer-brand .logo-text{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:900;color:var(--white);margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em}
-.footer-brand .logo-text span{color:var(--yellow)}
+.footer-brand .logo-text{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:900;color:#ffffff;margin-bottom:10px;text-transform:uppercase;letter-spacing:.04em}
+.footer-brand .logo-text span{color:var(--yellow-lt)}
 .footer-brand p{font-size:12.5px;line-height:1.7}
-.footer-col h4{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
+.footer-col h4{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow-lt);margin-bottom:14px}
 .footer-col a{display:block;font-size:12.5px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;transition:color .15s}
-.footer-col a:hover{color:var(--yellow)}
-.footer-bottom{max-width:1140px;margin:0 auto;padding-top:18px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:11.5px;color:rgba(255,255,255,.3)}
+.footer-col a:hover{color:var(--yellow-lt)}
+.footer-bottom{max-width:1140px;margin:0 auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:11.5px;color:rgba(255,255,255,.3)}
 
 /* UTILITY */
-.y{color:var(--yellow)}
-.w{color:var(--white)}
+.y{color:var(--yellow-dark)}
+.w{color:#1a2340;font-weight:600}
 
-/* RESPONSIVE GLOBAL */
 @media(max-width:600px){
   .page-wrap{padding:40px 16px}
   .section-title{font-size:24px}
@@ -392,7 +395,7 @@ footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(
     <div class="hero-slide active" style="background-image:url('images/committee/COnference.jpg')"></div>
     <div class="hero-slide" style="background-image:url('images/committee/seminar10.jpg')"></div>
     <div class="hero-slide" style="background-image:url('images/committee/presenting.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('images/committee/Bennetta1.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('images/committee/Bennetta-Koomson.webp')"></div>
     <div class="hero-slide" style="background-image:url('images/committee/discussion.jpg')"></div>
     <div class="hero-slide" style="background-image:url('images/committee/talk.jpg')"></div>
     <div class="hero-slide" style="background-image:url('images/committee/Seminar2.jpg')"></div>
@@ -443,7 +446,7 @@ footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(
       <div class="just-banner-icon">📖</div>
       <div class="just-banner-text">
         <h3>Full Papers Published in JUST</h3>
-        <p>Selected full papers from MWVRC 2026 will be considered for publication in the <strong style="color:var(--white)">Journal of the University of Science and Technology (JUST)</strong>, a peer-reviewed academic journal.</p>
+        <p>Selected full papers from MWVRC 2026 will be considered for publication in the <strong style="color:#1a2340">Journal of the University of Science and Technology (JUST)</strong>, a peer-reviewed academic journal.</p>
       </div>
       <span class="just-banner-badge">JUST Journal</span>
     </div>
@@ -462,10 +465,10 @@ footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(
           </div>
         </div>
         <div class="featured-card" onclick="openModal('bennetta')">
-          <div class="featured-photo"><img src="images/committee/bennetta-koomson.jpg" alt="Dr. Bennetta Koomson" onerror="this.style.display='none'"></div>
+          <div class="featured-photo"><img src="images/committee/Bennetta-Koomson.webp" alt="Dr. Bennetta Koomson" onerror="this.style.display='none'"></div>
           <div class="featured-body">
             <div class="featured-name">Dr. Bennetta Koomson</div>
-            <div class="featured-role">Committee Chair · OWSD Fellow 2023</div>
+            <div class="featured-role">Committee Chairperson · OWSD Fellow 2023</div>
             <div class="featured-affil">Senior Lecturer, Dept. Materials &amp; Metallurgical Engineering · KNUST</div>
             <span class="btn-profile">View Profile</span>
           </div>
@@ -487,7 +490,7 @@ footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(
       <div class="section-eyebrow">Venue</div>
       <div class="section-title">Conference Location</div>
       <div class="location-card">
-        <div class="location-photo"><img src="images/committee/library mall.webp" alt="Library Mall, KNUST" onerror="this.style.background='#1c2540'"></div>
+        <div class="location-photo"><img src="images/committee/library mall.webp" alt="Library Mall, KNUST" onerror="this.style.background='#dde2ef'"></div>
         <div class="location-info">
           <h3>Library Mall, KNUST</h3>
           <p><strong class="y">Kwame Nkrumah University of Science and Technology</strong><br>Kumasi, Ghana</p>
@@ -497,7 +500,7 @@ footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(
       </div>
     </div>
 
-    <!-- TRACKS — 3 rooms matching the actual session groupings -->
+    <!-- TRACKS -->
     <div style="margin-top:60px">
       <div class="section-eyebrow">Technical Tracks</div>
       <div class="section-title">Breakout Rooms</div>
@@ -538,7 +541,7 @@ footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(
       <div class="about-slide active" style="background-image:url('images/committee/COnference.jpg')"></div>
       <div class="about-slide" style="background-image:url('images/committee/seminar10.jpg')"></div>
       <div class="about-slide" style="background-image:url('images/committee/presenting.jpg')"></div>
-      <div class="about-slide" style="background-image:url('images/committee/Bennetta1.jpg')"></div>
+      <div class="about-slide" style="background-image:url('images/committee/Bennetta-Koomson.webp')"></div>
       <div class="about-slide" style="background-image:url('images/committee/discussion.jpg')"></div>
       <div class="about-slide" style="background-image:url('images/committee/talk.jpg')"></div>
       <div class="about-slide" style="background-image:url('images/committee/Seminar2.jpg')"></div>
@@ -550,12 +553,12 @@ footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(
     <div class="about-grid" style="margin-top:40px">
       <div class="about-body">
         <p>The Mineral Waste Valorization Research Conference 2026 (MWVRC 2026) is organised by the Department of Materials and Metallurgical Engineering at KNUST, Kumasi, Ghana, in partnership with the Organisation for Women in Science for the Developing World (OWSD).</p>
-        <p><strong class="w">What is mineral waste?</strong> Mineral waste refers to solid, liquid or semi-solid residues generated during the extraction, processing and beneficiation of mineral resources — including mine tailings, slag, waste rock, process effluents and by-products from metallurgical operations.</p>
+        <p><strong style="color:#1a2340">What is mineral waste?</strong> Mineral waste refers to solid, liquid or semi-solid residues generated during the extraction, processing and beneficiation of mineral resources — including mine tailings, slag, waste rock, process effluents and by-products from metallurgical operations.</p>
         <p>Ghana's mining sector generates significant volumes of mineral and industrial waste that is poorly managed, underutilised and environmentally costly. This conference fills that gap by bringing engineers, researchers, industry players and policymakers together on a dedicated platform.</p>
         <p>The conference is a direct output of the OWSD Early Career Fellowship of Dr. Bennetta Koomson (OWSD Fellow since 2023), whose fellowship is focused on mineral waste valorization research.</p>
         <div class="about-box" style="margin-top:20px">
           <h3>Conference Theme</h3>
-          <p style="font-style:italic;font-size:15px;color:var(--yellow);font-weight:600;">"Valorizing Mineral Waste through Engineering Innovations and Policy Advocacy"</p>
+          <p style="font-style:italic;font-size:15px;color:var(--yellow-dark);font-weight:600;">"Valorizing Mineral Waste through Engineering Innovations and Policy Advocacy"</p>
         </div>
       </div>
       <div>
@@ -571,17 +574,17 @@ footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(
         </div>
         <div class="about-box">
           <h3>Host Institution</h3>
-          <p><strong class="w">KNUST</strong> — Kwame Nkrumah University of Science and Technology<br>Department of Materials and Metallurgical Engineering<br>Library Mall, Kumasi, Ghana</p>
-          <p style="margin-top:10px"><strong class="w">In Partnership with OWSD</strong><br>Organisation for Women in Science for the Developing World</p>
+          <p><strong style="color:#1a2340">KNUST</strong> — Kwame Nkrumah University of Science and Technology<br>Department of Materials and Metallurgical Engineering<br>Library Mall, Kumasi, Ghana</p>
+          <p style="margin-top:10px"><strong style="color:#1a2340">In Partnership with OWSD</strong><br>Organisation for Women in Science for the Developing World</p>
         </div>
         <div class="about-box">
           <h3>Hybrid Format</h3>
           <p>All sessions — keynotes, breakout rooms, panel discussion and closing ceremony — will be live-streamed. The link will be distributed to all registered online participants.</p>
-          <p style="margin-top:10px"><strong class="w">Physical venue:</strong> Library Mall, KNUST, Kumasi, Ghana<br><strong class="w">Online:</strong> Link distributed on registration</p>
+          <p style="margin-top:10px"><strong style="color:#1a2340">Physical venue:</strong> Library Mall, KNUST, Kumasi, Ghana<br><strong style="color:#1a2340">Online:</strong> Link distributed on registration</p>
         </div>
         <div class="about-box">
           <h3>📖 Publication in JUST</h3>
-          <p>Selected full papers will be considered for publication in the <strong class="w">Journal of the University of Science and Technology (JUST)</strong>, a peer-reviewed academic journal.</p>
+          <p>Selected full papers will be considered for publication in the <strong style="color:#1a2340">Journal of the University of Science and Technology (JUST)</strong>, a peer-reviewed academic journal.</p>
         </div>
       </div>
     </div>
@@ -599,8 +602,8 @@ footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(
       <div class="people-section-title">Core Organising Committee</div>
       <div class="people-grid">
         <div class="person-card" onclick="openModal('bennetta')">
-          <div class="person-photo"><img src="images/committee/bennetta-koomson.jpg" alt="Dr. Bennetta Koomson" onerror="this.style.display='none';this.parentNode.innerHTML='BK'"></div>
-          <div class="person-body"><div class="person-name">Dr. Bennetta Koomson</div><div class="person-role">Committee Chair · OWSD Fellow 2023</div><div class="person-affil">Senior Lecturer · KNUST</div><span class="btn-view-profile">View Profile</span></div>
+          <div class="person-photo"><img src="images/committee/Bennetta-Koomson.webp" alt="Dr. Bennetta Koomson" onerror="this.style.display='none';this.parentNode.innerHTML='BK'"></div>
+          <div class="person-body"><div class="person-name">Dr. Bennetta Koomson</div><div class="person-role">Committee Chairperson · OWSD Fellow 2023</div><div class="person-affil">Senior Lecturer · KNUST</div><span class="btn-view-profile">View Profile</span></div>
         </div>
         <div class="person-card" onclick="openModal('gikunoo')">
           <div class="person-photo"><img src="images/committee/Prof. Emmanuel Gikunoo.jpeg" alt="Prof. Emmanuel Gikunoo" onerror="this.style.display='none';this.parentNode.innerHTML='EG'"></div>
@@ -620,7 +623,7 @@ footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(
         </div>
         <div class="person-card" onclick="openModal('akumfi')">
           <div class="person-photo"><img src="images/committee/Mr. Christopher A. Akumfi.jpeg" alt="Mr. Christopher A. Akumfi" onerror="this.style.display='none';this.parentNode.innerHTML='CA'"></div>
-          <div class="person-body"><div class="person-name">Mr. Christopher A. Akumfi</div><div class="person-role">Committee Member</div><div class="person-affil">KNUST</div><span class="btn-view-profile">View Profile</span></div>
+          <div class="person-body"><div class="person-name">Mr. Christopher A. Akumfi</div><div class="person-role">Finance</div><div class="person-affil">KNUST</div><span class="btn-view-profile">View Profile</span></div>
         </div>
       </div>
     </div>
@@ -750,7 +753,7 @@ footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(
         </div>
       </div>
       <div class="speaker-card" onclick="openModal('bennetta')">
-        <div class="speaker-photo"><img src="images/committee/bennetta-koomson.jpg" alt="Dr. Bennetta Koomson" onerror="this.style.display='none';this.parentNode.innerHTML='BK'"></div>
+        <div class="speaker-photo"><img src="images/committee/Bennetta-Koomson.webp" alt="Dr. Bennetta Koomson" onerror="this.style.display='none';this.parentNode.innerHTML='BK'"></div>
         <div class="speaker-body">
           <div class="speaker-name">Dr. Bennetta Koomson</div>
           <div class="speaker-title">OWSD Fellow 2023 · Senior Lecturer, KNUST</div>
@@ -770,15 +773,15 @@ footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(
     <div class="section-title">Panel Discussion</div>
     <div class="section-sub">25 June 2026 · KNUST, Kumasi, Ghana · Moderated by Prof. Kwadwo Mensah Darkwa</div>
 
-    <div style="background:var(--navy-lt);border:1px solid rgba(245,200,0,.3);border-radius:10px;padding:20px 26px;margin-bottom:36px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-      <div style="font-size:16px;font-style:italic;color:var(--yellow);flex:1;font-weight:600;">"Valorizing Mineral Waste through Engineering and Policy Innovation"</div>
-      <div style="font-size:12px;color:var(--muted)">Moderated by <strong class="w">Prof. Kwadwo Mensah Darkwa</strong></div>
+    <div style="background:linear-gradient(135deg,#eef1f8,rgba(200,160,0,.06));border:1px solid rgba(200,160,0,.3);border-radius:10px;padding:20px 26px;margin-bottom:36px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <div style="font-size:16px;font-style:italic;color:var(--yellow-dark);flex:1;font-weight:600;">"Valorizing Mineral Waste through Engineering and Policy Innovation"</div>
+      <div style="font-size:12px;color:var(--muted)">Moderated by <strong style="color:#1a2340">Prof. Kwadwo Mensah Darkwa</strong></div>
     </div>
 
     <div class="panel-question">
       <div class="panel-q-num">01</div>
       <div class="panel-q-header">
-        <div class="panel-sponsor-badge"><img src="images/committee/Intertek Logo.jpeg" alt="SGS" onerror="this.style.display='none'"><span>SGS</span></div>
+        <div class="panel-sponsor-badge"><img src="images/committee/SGS.jpg" alt="SGS" onerror="this.style.display='none'"><span>SGS</span></div>
         <div class="panel-q-title">Bridging Research, Industry, and Impact</div>
       </div>
       <div class="panel-q-body">Ghanaian universities and research institutions have generated significant knowledge on mine tailings, waste rock, slags, and metallurgical by-products, yet few of these innovations have reached commercial implementation. What are the key barriers preventing the transition from research to industry adoption, and how can stakeholders work together to convert mineral waste research into scalable economic and environmental solutions?</div>
@@ -787,7 +790,7 @@ footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(
     <div class="panel-question">
       <div class="panel-q-num">02</div>
       <div class="panel-q-header">
-        <div class="panel-sponsor-badge"><img src="images/committee/ICMS_Imperial college mine safety logo.jpeg" alt="ALS" onerror="this.style.display='none'"><span>ALS</span></div>
+        <div class="panel-sponsor-badge"><img src="images/committee/ALS.png" alt="ALS" onerror="this.style.display='none'"><span>ALS</span></div>
         <div class="panel-q-title">Characterization as the Foundation of Valorization</div>
       </div>
       <div class="panel-q-body">Many mineral waste streams remain underutilized because their resource potential is not fully understood. Given the expertise of laboratories, industry, and academia, how can Ghana strengthen mineral waste characterization and data-driven decision-making to unlock value from mine tailings, waste rock, and processing residues?</div>
@@ -839,17 +842,17 @@ footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(
             <tr><td class="prog-time">09:05 am</td><td><div class="prog-session">Singing of the National Anthem</div></td></tr>
             <tr><td class="prog-time">09:10 am</td><td><div class="prog-session">Introduction of Dignitaries</div><div class="prog-detail">Moderator — Prof. Kwadwo Mensah Darkwa</div></td></tr>
             <tr class="prog-highlight"><td class="prog-time">09:20 am</td><td><div class="prog-session">Welcome and Opening Address</div><div class="prog-detail">Conference Chair — Prof. Kwabena Biritwum Nyarko</div></td></tr>
-            <tr class="prog-highlight"><td class="prog-time">09:35 am</td><td><div class="prog-session">Keynote Address 1</div><div class="prog-detail">Mr. Sampson Gyasi Koduah · Business Line Leader, Minerals Sub-Saharan Africa, Intertek Ghana Minerals</div><div class="prog-detail" style="margin-top:4px;font-style:italic;color:var(--yellow)">Waste Valorization Technologies and Circular Economy Strategies</div></td></tr>
+            <tr class="prog-highlight"><td class="prog-time">09:35 am</td><td><div class="prog-session">Keynote Address 1</div><div class="prog-detail">Mr. Sampson Gyasi Koduah · Business Line Leader, Minerals Sub-Saharan Africa, Intertek Ghana Minerals</div><div class="prog-detail" style="margin-top:4px;font-style:italic;color:var(--yellow-dark)">Waste Valorization Technologies and Circular Economy Strategies</div></td></tr>
             <tr class="prog-break"><td class="prog-time">10:05 am</td><td><div class="prog-session">Poetry Recitals</div><div class="prog-detail">St. Louis Senior High School</div></td></tr>
-            <tr class="prog-highlight"><td class="prog-time">10:10 am</td><td><div class="prog-session">Keynote Address 2</div><div class="prog-detail">Dr. Jackson Adiyiah Nyantakyi · Ashanti Regional Director, EPA</div><div class="prog-detail" style="margin-top:4px;font-style:italic;color:var(--yellow)">Policy, Regulation and Industry Practice in Mineral Waste Management</div></td></tr>
+            <tr class="prog-highlight"><td class="prog-time">10:10 am</td><td><div class="prog-session">Keynote Address 2</div><div class="prog-detail">Dr. Jackson Adiyiah Nyantakyi · Ashanti Regional Director, EPA</div><div class="prog-detail" style="margin-top:4px;font-style:italic;color:var(--yellow-dark)">Policy, Regulation and Industry Practice in Mineral Waste Management</div></td></tr>
             <tr class="prog-break"><td class="prog-time">10:40 am</td><td><div class="prog-session">OWSD Documentary Show</div></td></tr>
-            <tr class="prog-highlight"><td class="prog-time">10:50 am</td><td><div class="prog-session">Keynote Address 3</div><div class="prog-detail">Dr. Bennetta Koomson · OWSD Fellow 2023</div><div class="prog-detail" style="margin-top:4px;font-style:italic;color:var(--yellow)">Characterization, Sustainable Processing, and Environmental Management of Mineral Waste</div></td></tr>
+            <tr class="prog-highlight"><td class="prog-time">10:50 am</td><td><div class="prog-session">Keynote Address 3</div><div class="prog-detail">Dr. Bennetta Koomson · OWSD Fellow 2023</div><div class="prog-detail" style="margin-top:4px;font-style:italic;color:var(--yellow-dark)">Characterization, Sustainable Processing, and Environmental Management of Mineral Waste</div></td></tr>
             <tr class="prog-break"><td class="prog-time">11:20 am</td><td><div class="prog-session">Morning Refreshments + Poster Viewing &amp; Exhibition</div></td></tr>
-            <tr class="prog-highlight"><td class="prog-time">12:05 pm</td><td><div class="prog-session">Panel Discussion</div><div class="prog-detail">Panelists: SGS · Intertek · ALS · EPA · MPPE</div><div class="prog-detail" style="margin-top:4px;font-style:italic;color:var(--yellow)">Theme: Valorizing Mineral Waste through Engineering Innovations and Policy Advocacy</div></td></tr>
+            <tr class="prog-highlight"><td class="prog-time">12:05 pm</td><td><div class="prog-session">Panel Discussion</div><div class="prog-detail">Panelists: SGS · Intertek · ALS · EPA · MPPE</div><div class="prog-detail" style="margin-top:4px;font-style:italic;color:var(--yellow-dark)">Theme: Valorizing Mineral Waste through Engineering Innovations and Policy Advocacy</div></td></tr>
             <tr><td class="prog-time">1:00 pm</td><td><div class="prog-session">Technical Breakout Sessions</div>
-              <div class="prog-detail" style="margin-top:6px"><strong class="w">Room A</strong> — T1: Characterization &amp; Processing · T4: Policy &amp; Regulatory Frameworks</div>
-              <div class="prog-detail"><strong class="w">Room B</strong> — T2: Environmental Impact, Remediation &amp; Sustainable Management</div>
-              <div class="prog-detail"><strong class="w">Room C</strong> — T3: Waste Valorization Technologies &amp; Circular Economy Strategies</div></td></tr>
+              <div class="prog-detail" style="margin-top:6px"><strong style="color:#1a2340">Room A</strong> — T1: Characterization &amp; Processing · T4: Policy &amp; Regulatory Frameworks</div>
+              <div class="prog-detail"><strong style="color:#1a2340">Room B</strong> — T2: Environmental Impact, Remediation &amp; Sustainable Management</div>
+              <div class="prog-detail"><strong style="color:#1a2340">Room C</strong> — T3: Waste Valorization Technologies &amp; Circular Economy Strategies</div></td></tr>
             <tr class="prog-highlight"><td class="prog-time">3:00 pm</td><td><div class="prog-session">Closing Ceremony &amp; Awards</div>
               <div class="prog-detail">Messages from Sponsors &amp; Organizations · Intertek · MPPE · WISTEM · WiM · TBEC · ALS · ICMS · GhIE · LiMAP-GH · SGS · OWSD GH · EPA · WINE</div>
               <div class="prog-detail" style="margin-top:4px">Presentation of Awards and Certificates</div>
@@ -964,10 +967,10 @@ footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(
     <div class="contact-grid">
       <div class="contact-card">
         <h3>Contact Information</h3>
-        <div class="contact-item"><span class="contact-icon">📧</span><div><strong class="w">General Enquiries</strong><br><a href="mailto:mwvresearchconference@gmail.com">mwvresearchconference@gmail.com</a></div></div>
-        <div class="contact-item"><span class="contact-icon">👤</span><div><strong class="w">Conference Organiser</strong><br>Dr. Bennetta Koomson<br><a href="mailto:bkoomson.coe@knust.edu.gh">bkoomson.coe@knust.edu.gh</a></div></div>
-        <div class="contact-item"><span class="contact-icon">📍</span><div><strong class="w">Venue</strong><br>Library Mall, KNUST<br>Kumasi, Ghana</div></div>
-        <div class="contact-item"><span class="contact-icon">📅</span><div><strong class="w">Conference Date</strong><br>25 June 2026 · Hybrid Event</div></div>
+        <div class="contact-item"><span class="contact-icon">📧</span><div><strong style="color:#1a2340">General Enquiries</strong><br><a href="mailto:mwvresearchconference@gmail.com">mwvresearchconference@gmail.com</a></div></div>
+        <div class="contact-item"><span class="contact-icon">👤</span><div><strong style="color:#1a2340">Conference Organiser</strong><br>Dr. Bennetta Koomson<br><a href="mailto:bkoomson.coe@knust.edu.gh">bkoomson.coe@knust.edu.gh</a></div></div>
+        <div class="contact-item"><span class="contact-icon">📍</span><div><strong style="color:#1a2340">Venue</strong><br>Library Mall, KNUST<br>Kumasi, Ghana</div></div>
+        <div class="contact-item"><span class="contact-icon">📅</span><div><strong style="color:#1a2340">Conference Date</strong><br>25 June 2026 · Hybrid Event</div></div>
       </div>
       <div class="contact-card">
         <h3>Send a Message</h3>
@@ -1024,7 +1027,6 @@ footer{background:var(--navy-mid);border-top:2px solid var(--yellow);color:rgba(
 </div>
 
 <script>
-// SECTION NAVIGATION
 const sectionMap={home:'sec-home',about:'sec-about',committee:'sec-committee',chairs:'sec-chairs',speakers:'sec-speakers',panel:'sec-panel',programme:'sec-programme',dates:'sec-dates',awards:'sec-awards',sponsors:'sec-sponsors',contact:'sec-contact'};
 function showSection(key){
   Object.values(sectionMap).forEach(id=>{const el=document.getElementById(id);if(el){el.style.display='none';el.classList.remove('active')}});
@@ -1072,13 +1074,15 @@ function updateCountdown(){
 }
 updateCountdown();setInterval(updateCountdown,1000);
 
-// SPONSORS TICKER
+// SPONSORS TICKER — natural logo shapes, no forced background box
 const SPONSORS=[
   {img:'images/committee/Intertek Logo.jpeg',name:'Intertek'},
   {img:'images/committee/Mining Pro (MPPE) Logo.jpeg',name:'Mining Pro'},
   {img:'images/committee/ICMS_Imperial college mine safety logo.jpeg',name:'ICMS'},
   {img:'images/committee/OWSD logo.jpeg',name:'OWSD'},
   {img:'images/committee/we africa.png',name:'We Africa'},
+  {img:'images/committee/SGS.jpg',name:'SGS'},
+  {img:'images/committee/ALS.png',name:'ALS'},
 ];
 function buildTicker(id){
   const track=document.getElementById(id);
@@ -1088,15 +1092,15 @@ function buildTicker(id){
 }
 ['sponsors-track','sponsors-track-2','sponsors-track-about','sponsors-track-comm','sponsors-track-chairs','sponsors-track-spk','sponsors-track-panel','sponsors-track-prog','sponsors-track-dates','sponsors-track-awards','sponsors-track-spon','sponsors-track-contact'].forEach(buildTicker);
 
-// PROFILES DATA
+// PROFILES
 const PROFILES={
   provost:{photo:'images/committee/Provost.jpg',initials:'KN',name:'Prof. Kwabena Biritwum Nyarko',role:'Conference Chair',affil:'Provost, College of Engineering · KNUST',bio:`<p>Prof. Kwabena Biritwum Nyarko is a Ghanaian engineer, academic, and researcher who currently serves as the Provost of the College of Engineering at KNUST. He is a Professor in the Department of Civil Engineering with more than three decades of experience in teaching, research, and engineering leadership.</p><p>A specialist in Water, Sanitation and Hygiene (WASH), his research focuses on water supply systems, sanitation technologies, water distribution modelling, and sustainable service delivery. He has authored over 100 scholarly publications and has led several major research and capacity-building initiatives.</p><p>Prof. Nyarko holds an MSc in Sanitary Engineering and a PhD through the UNESCO-IHE Institute for Water Education. Before becoming Provost in 2022, he served as Head of the Department of Petroleum Engineering and Vice Dean of the Faculty of Civil and Geo-Engineering.</p>`},
   gikunoo:{photo:'images/committee/Prof. Emmanuel Gikunoo.jpeg',initials:'EG',name:'Prof. Emmanuel Gikunoo',role:'Head of Department · Technical Editor (Lead)',affil:'Dept. Materials and Metallurgical Engineering · KNUST',bio:`<p>Prof. Emmanuel Gikunoo is the Head of Department of Materials and Metallurgical Engineering at KNUST, and serves as Technical Editor (Lead) for the MWVRC 2026 conference proceedings.</p>`},
-  bennetta:{photo:'images/committee/bennetta-koomson.jpg',initials:'BK',name:'Dr. Bennetta Koomson',role:'Committee Chair · OWSD Fellow 2023 · Keynote Speaker 3',affil:'Senior Lecturer, Dept. Materials and Metallurgical Engineering · KNUST',topic:'Keynote Topic: Characterization, Sustainable Processing, and Environmental Management of Mineral Waste',bio:`<p>Dr. (Mrs.) Bennetta Koomson is a distinguished Ghanaian Minerals Engineer, Senior Lecturer, and Consulting Engineer at KNUST. Her work focuses on urban mining, mineral waste valorization, and circular economy solutions, transforming hazardous mining and metallurgical waste into safe, value-added materials.</p><p>With strong experience across academia, industry, and research, she develops practical, scalable solutions in metallurgical waste upcycling, heavy metal remediation, wastewater treatment, and mine waste management. As a 2023 OWSD Early Career Fellow (UNESCO), she leads pioneering research on recovering valuable materials from lead-bearing assay waste while advancing circular manufacturing systems.</p><p>Dr. Koomson has secured competitive funding from international and national organisations, published in peer-reviewed journals, and contributed to advancing innovation in mineral processing and environmental sustainability. She holds a PhD, MPhil, and BSc in Minerals Engineering from UMaT and KNUST, with international research experience in Canada and Australia.</p><p>She currently serves as the first female Vice Chairperson of the Ghana Institution of Engineering (Ashanti Region, Branch 1) and is the founder of the Luv-Ebeneta Career Fair, a national STEM outreach initiative equipping young people — especially girls — with leadership, technical, and career development skills.</p>`},
+  bennetta:{photo:'images/committee/Bennetta-Koomson.webp',initials:'BK',name:'Dr. Bennetta Koomson',role:'Committee Chairperson · OWSD Fellow 2023 · Keynote Speaker 3',affil:'Senior Lecturer, Dept. Materials and Metallurgical Engineering · KNUST',topic:'Keynote Topic: Characterization, Sustainable Processing, and Environmental Management of Mineral Waste',bio:`<p>Dr. (Mrs.) Bennetta Koomson is a distinguished Ghanaian Minerals Engineer, Senior Lecturer, and Consulting Engineer at KNUST. Her work focuses on urban mining, mineral waste valorization, and circular economy solutions, transforming hazardous mining and metallurgical waste into safe, value-added materials.</p><p>With strong experience across academia, industry, and research, she develops practical, scalable solutions in metallurgical waste upcycling, heavy metal remediation, wastewater treatment, and mine waste management. As a 2023 OWSD Early Career Fellow (UNESCO), she leads pioneering research on recovering valuable materials from lead-bearing assay waste while advancing circular manufacturing systems.</p><p>Dr. Koomson has secured competitive funding from international and national organisations, published in peer-reviewed journals, and contributed to advancing innovation in mineral processing and environmental sustainability. She holds a PhD, MPhil, and BSc in Minerals Engineering from UMaT and KNUST, with international research experience in Canada and Australia.</p><p>She currently serves as the first female Vice Chairperson of the Ghana Institution of Engineering (Ashanti Region, Branch 1) and is the founder of the Luv-Ebeneta Career Fair, a national STEM outreach initiative equipping young people — especially girls — with leadership, technical, and career development skills.</p>`},
   darkwa:{photo:'images/committee/Prof. Kwadwo Mensah Darkwa.jpeg',initials:'KD',name:'Prof. Kwadwo Mensah Darkwa',role:'Programme Moderator · Technical Editor &amp; Publication Liaison',affil:'Dept. Materials and Metallurgical Engineering · KNUST · JUST Journal Liaison',bio:`<p>Prof. Kwadwo Mensah Darkwa serves as the Programme Moderator for MWVRC 2026, overseeing the Introduction of Dignitaries and facilitating the conference flow. He also serves as Technical Editor and JUST Journal Publication Liaison, supporting the pathway for accepted papers into peer-reviewed publication.</p>`},
   patricia:{photo:'images/committee/Mrs. Patricia Amoah Yirenkyi.jpeg',initials:'PA',name:'Mrs. Patricia Amoah Yirenkyi',role:'Programme Coordinator',affil:'Office of Grants and Research · KNUST (Research Manager)',bio:`<p>Mrs. Patricia Amoah Yirenkyi serves as Programme Coordinator for MWVRC 2026, managing logistics, scheduling, and coordination from the Office of Grants and Research at KNUST.</p>`},
   prince:{photo:'images/committee/Mr. Prince Owusu.jpeg',initials:'PO',name:'Mr. Prince Owusu',role:'Secretary',affil:'KNUST',bio:`<p>Mr. Prince Owusu serves as Secretary to the Organising Committee of MWVRC 2026, supporting administrative coordination for the conference.</p>`},
-  akumfi:{photo:'images/committee/Mr. Christopher A. Akumfi.jpeg',initials:'CA',name:'Mr. Christopher A. Akumfi',role:'Organising Committee Member',affil:'KNUST',bio:`<p>Mr. Christopher A. Akumfi serves on the Organising Committee of MWVRC 2026, contributing to the planning and execution of the conference.</p>`},
+  akumfi:{photo:'images/committee/Mr. Christopher A. Akumfi.jpeg',initials:'CA',name:'Mr. Christopher A. Akumfi',role:'Finance',affil:'KNUST',bio:`<p>Mr. Christopher A. Akumfi serves on the Organising Committee of MWVRC 2026, handling finance responsibilities for the conference.</p>`},
   sampson:{photo:'images/committee/Mr. Sampson Koduah.jpeg',initials:'SK',name:'Mr. Sampson Gyasi Koduah',role:'Keynote Speaker 1',affil:'Business Line Leader, Minerals Sub-Saharan Africa · Intertek Ghana Minerals',topic:'Keynote Topic: Waste Valorization Technologies and Circular Economy Strategies',bio:`<p>Sampson has held various positions in Intertek Minerals across different parts of Africa and was the General Manager of the West/Central Africa region prior to his current role. With over a decade of experience in Geochemistry, his technical achievements include designing, commissioning and operating both commercial and on-site geo-chem laboratories.</p><p>Under Sampson's leadership, the Minerals Ghana business transformed from a struggling operation in 2015 into one of the company's strongest performing businesses in the region. This growth-driven approach has since been replicated across West and Central Africa, with notable successes in Burkina Faso, Côte d'Ivoire, and Gabon.</p><p>Sampson is also a strong advocate for gender inclusion, having increased female participation in his teams by over 30% in the last five years. He is passionate about sustainability and actively supports community impact through corporate social responsibility initiatives.</p>`},
   jackson:{photo:'images/committee/Dr. Jackson Nyantakyi.jpeg',initials:'JN',name:'Dr. Jackson Adiyiah Nyantakyi',role:'Keynote Speaker 2',affil:'Ashanti Regional Director · Environmental Protection Agency, Ghana',topic:'Keynote Topic: Policy, Regulation and Industry Practice in Mineral Waste Management',bio:`<p>Dr. Jackson Adiyiah Nyantakyi is an Environmental Scientist and researcher with over 29 publications in peer-reviewed journals. His research area is Environmental Toxicology. He is the Ashanti Regional Director of the Environmental Protection Authority.</p><p>Dr. Nyantakyi holds a First Degree from KNUST, a Post Graduate Degree from China Agricultural University, Beijing, a Master's Degree from the Netherlands, and a Doctorate in Environmental Science from KNUST. He has over 25 years of experience in leadership and is a transformational leader known for his passion for excellence.</p><p>He is a Member of the International Association of Impact Assessment (IAIA), Vice Chairman of the Tano Basin Board of Water Resources Commission, and a Part-time Lecturer at the University of Energy and Natural Resources (UENR), Sunyani.</p>`},
   efiba:{photo:'images/committee/Dr. Efiba Vidda.jpeg',initials:'EV',name:'Dr. (Mrs.) Efiba Vidda Senkyire Kwarteng',role:'Technical Session Chair · Room A',affil:'Senior Lecturer, Dept. Geomatic Engineering · KNUST',bio:`<p>Dr. Efiba Vidda Senkyire Kwarteng is a Lecturer in the Department of Geomatic Engineering at KNUST, specialising in Spatial Epidemiology, Geospatial Analytics, and Disease Distribution Modelling.</p><p>Her research focuses on leveraging geospatial technologies and environmental intelligence to address complex public health challenges. Prior to joining academia, she worked in the mining industry across the West African sub-region, gaining expertise in geospatial data acquisition, spatial analysis, and environmental assessment.</p>`},
